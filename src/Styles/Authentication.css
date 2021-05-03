@@ -1,0 +1,100 @@
+:root{
+    --primaryColor: #7CC8CB;
+
+}
+
+
+.Authentication{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #EBEBEB;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Authentication .main{
+    display: flex;
+    margin: 45px auto;
+    width: 70%;
+    height: 80%;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 3px 5px 15px lightgray;
+}
+
+
+.illustration{
+    flex: 0.4;
+    background: url(../Assests/Login-img.jpg);
+    background-size: cover;
+    background-position: right;
+}
+
+.login-singIn{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 0.6;
+}
+
+header{
+    display: flex;
+    position: relative;
+    flex: 0.05;
+    justify-content: center;
+    width: fit-content;
+    margin: 5px auto;
+    
+
+}
+
+header p {
+    width: 100px;
+    text-align: center;
+    line-height: 7px;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: pointer;
+    color:#A89E9E;
+}
+
+header p:first-child{
+    margin-right: 15px; 
+}
+
+.selected-bar-style{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    height: 3.5px;
+    width: 100px;
+    border-radius: 5px;  
+    box-shadow: 1px 1px 10px lightgray;
+    background-color: var(--primaryColor);
+}
+
+.selected-Connexion{
+    transform: translate(0px);
+    transition-duration: 280ms;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+.selected-Inscription{
+    transform: translate(115px);
+    transition-duration: 280ms;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+.selected-title{
+    color: var(--primaryColor);
+}
+
+
+.form-input{
+    flex: 0.95;
+    text-align: center;
+    margin: 11px;
+    
+
+}
