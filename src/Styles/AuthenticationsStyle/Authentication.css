@@ -1,5 +1,7 @@
 :root{
     --primaryColor: #7CC8CB;
+    --primaryColorLowOpacity:rgb(124, 200, 203,0.6);
+    --thirdColor:#A89E9E;
 
 }
 
@@ -25,7 +27,7 @@
 
 .illustration{
     flex: 0.4;
-    background: url(../Assests/Login-img.jpg);
+    background: url(../../Assests/Login-img.jpg);
     background-size: cover;
     background-position: right;
 }
@@ -41,9 +43,8 @@ header{
     display: flex;
     position: relative;
     flex: 0.05;
-    justify-content: center;
     width: fit-content;
-    margin: 5px auto;
+    margin: 7px auto;
     
 
 }
@@ -55,7 +56,7 @@ header p {
     font-size: 19px;
     font-weight: 500;
     cursor: pointer;
-    color:#A89E9E;
+    color:var(--thirdColor);
 }
 
 header p:first-child{
@@ -95,6 +96,14 @@ header p:first-child{
     flex: 0.95;
     text-align: center;
     margin: 11px;
-    
+    padding-top: 50px;
+}
+
+
+.copy-right{
+    color: var(--thirdColor);
+    font-size: 13px;
+    margin: 5px auto;
+    bottom: 0;
 
 }

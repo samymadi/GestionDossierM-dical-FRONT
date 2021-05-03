@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import '../Styles/Authentication.css'
+import '../Styles/AuthenticationsStyle/Authentication.css'
 import SignIn from "../Component/AuthenticationComponent/SignIn"
 import Login from "../Component/AuthenticationComponent/Login"
 
@@ -21,13 +21,13 @@ const [LoginOrSignin,setLoginOrSignin]= useState(true);
         setSelectedBarStyle("selected-bar-style selected-Connexion")
         setTConnexionitleSelectedstyle("selected-title");
         setInscriptionTConnexionitleSelectedstyle("");
-        setLoginOrSignin(prev=>!prev);
+        setLoginOrSignin(true);
     }
     const InscriptionClick = ()=>{
         setSelectedBarStyle("selected-bar-style selected-Inscription")
         setInscriptionTConnexionitleSelectedstyle("selected-title");
         setTConnexionitleSelectedstyle("");
-        setLoginOrSignin(prev=>!prev);
+        setLoginOrSignin(false);
     }
     return (
         <div className='Authentication'>
@@ -43,6 +43,7 @@ const [LoginOrSignin,setLoginOrSignin]= useState(true);
                         <main className="form-input">
                             {LoginOrSignin ? <SignIn></SignIn> : <Login></Login>}  
                         </main>
+                            <p className="copy-right"> @CopyRight: droits  réservés 2021</p>
 
 
                     </div>
