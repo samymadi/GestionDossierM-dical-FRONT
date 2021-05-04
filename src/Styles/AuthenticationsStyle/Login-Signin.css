@@ -1,131 +1,158 @@
-.signin-login{
+
+
+.signin-login-inscription{
     opacity: 0.4;
-    transform: translate(-25px);
-
-    
+    transform: translate(-25px); 
 }
-.signin-login-anime{
-    opacity: 1;
-    transform: translate(0px);
-    transition-duration: 1000ms;
-    transition-timing-function: ease-out;
-}
-
-form{
-    display: flex;
-    flex-direction: column;
+.signin-login-connexion{
+    opacity: 0.4;
+    transform: translate(+25px); 
 }
 
 
-
- form p{
-    align-self: flex-start;
-    margin-left: 90px;
-    margin-top: 0;
-    margin-bottom: 0;
-   
-}
-
-
-
-.container-input{
+.input-container{
     width: 70%;
-    margin: 5px auto;
-    background-color: #F5F5F5;
-    border-radius: 8px;
-    
+    margin: 5px auto;   
+}
+
+.simple-message{
+    color :var(--thirdColor);
+}
+.warning-message{
+    color:rgb(250, 169, 19)
+}
+.error-message{
+    color: red;
 }
 
 
-.container-input input{
-    outline: none;
-    border: none;
-    width: 100%;
-    height: 40px;
-    background-color: inherit;
-    border-radius: inherit;
-    border: 2px solid white;
-    padding-left: 10px;
-    font-weight: 500;
-    font-size: 16px;    
-    /* Animarion---------------------------- */
-    transition-timing-function: ease-out;
-    transition-duration: 220ms;
-}
 
-
-.container-input input:focus{
-    border: 2px solid var(--primaryColorLowOpacity);
-}
-
-
-.additional-info{
+.input-more{
     display: flex;
-    justify-content: space-around;
-    padding: 5px 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0px 0px;
 }
 
 
 .forgot-password{
+    margin-top: 5px;
     text-decoration: none;
-    font-size: 14px;
-    color:var(--primaryColor);
-    line-height: 25px;
+    color: var(--primaryColor);
+    font-size: 13px;
     font-weight: bold;
+    
 }
 
-
-.submit-button{
-    width: 50%;
-    height: 40px;
-    margin: 35px auto;
-    color: white;
-    font-size: 15px;
-    border: none;
-    border-radius: 11px;
-    background-color: var(--primaryColor);
-    box-shadow: 3px 5px 11px lightgray;
-    cursor: pointer;
-
-}
-
-.submit-button:focus{
+.input-container input{
     outline: none;
+    height: 35px;
+    width: 95%;
+    border: 2px solid white;
+    border-radius:7px;
+    background-color: #F5F5F5;
+    transition-timing-function: ease-out;
+    transition-duration: 300ms;
+    transition-property: border;
+    font-size: 15px;
+    padding-left: 11px;
+    
+    
+    
 }
 
-.submit-button:hover{
-    opacity: 0.9;
-}
-
-.confirmation-password{
+.input-password-container{
     display: flex;
+    margin: 5px auto ;
     width: 70%;
-    margin: 5px auto;
-
+    justify-content: space-between;
 }
 
-.confirmation-password div {
+.input-password-container .input-container-login{
+    width: 180px;
+    margin: 0;
+}
+.input-password-container .input-container-login input{
+    width: 90%;
+}
+.input-container p{
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-top: 2px;
+    font-size: 12px;
+    /* visibility: hidden; */
+    
+}
+
+.input-container input:focus{
+    outline: none;
+    border: 2px solid var(--primaryColorLowOpacity);
    
 }
 
-.login-form{
-    margin: 0;
+.button-input{
+    margin: 40px auto;
+    margin-bottom: 20px;
+    display: block;
+    border: none;
+    border-radius:7px;
+    box-shadow: 1px 3px 7px lightgray ;
+    width: 50%;
+    height: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background-color: var(--primaryColor);   
+    transition: ease-in-out;
+    transition-duration: 300ms;
+    transition-property: opacity;
 }
 
-.confirmation-password p{
-    margin: 0;
+.button-input:hover{
+    opacity: 0.8;
+}
+.button-input:focus{
+    outline: none;
 }
 
-
-.redirect-login{
-    margin-top: 0;
-    font-size: 14px;
-    color : var(--thirdColor);
+.goto-Login{
+    text-align: center;
+    font-size: 13px;
+    color:var(--thirdColor);
 }
-
-.redirect-login span{
+.goto-Login span{
     color: var(--primaryColor);
     font-weight: bold;
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 741px){
+    .input-more{
+        display: block;
+        text-align: center;
+    }
+    
+    .input-password-container .input-container-login input{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:1240px) {
+    .input-password-container .input-container-login input{
+        /* width: 60%; */
+    }
+
+    .input-password-container .input-container-login{
+        width: 140px;
+        
+    }
+}
+
+
+
+
+
+
 

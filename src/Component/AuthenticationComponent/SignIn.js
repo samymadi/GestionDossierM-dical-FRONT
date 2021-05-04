@@ -1,40 +1,43 @@
 import {Link} from 'react-router-dom'
 import {useEffect,useState} from 'react'
 import Checkbox from '../ControlComponent/Checkbox/Checkbox.js'
+import '../../Styles/AuthenticationsStyle/Login-Signin.css'
 
 
 function SignIn(){
 
-    const [animationClass,setAnimationClass] = useState("signin-login");
+    const [animationClass,setAnimationClass]= useState("signin-login-connexion")
 
     useEffect(()=>{
-        setAnimationClass("signin-login-anime");
+        setAnimationClass("signin-login-anime")
     },[])
-
 
     return (
         <div className={animationClass}>
-          <form>
-              <p>Email</p>
-              <div className="container-input">
-                  <input type="email" name="email"/>
-              </div>
-              <p>Password</p>
 
-              <div className="container-input password-input">
-                  <input type="password" name="password"/>
-              </div>
+            <div>
+                <form>
+                    <div className="input-container">
+                        <input type="email" placeholder="Email"/>
+                    <p><span style={{textAlign:"center",color:'red',display:"hidden"}}>Veuillez saisir votre email</span></p>
+                    </div>
+                    <div className="input-container">
+                        <input type="password" placeholder="password"/>
+                        <p><span style={{textAlign:"center",color:'red'}}>Veuillez saisir votre email</span></p>
+                        
+                    </div>
+                    <div className="input-container input-more">
+                        <Checkbox>Remember Me</Checkbox>
+                        <Link className="forgot-password">Mot de passe oublié ?</Link>
+                    </div>
 
-              <div className="additional-info">
-                  <Checkbox>Remember Me</Checkbox>  
-                  <Link to="Sommewhere" className="forgot-password">Mot de passe oublié ?</Link>
-              </div>
+                    <button className="button-input">Connecter</button>
+                    <p className="goto-Login">Vous avez pas de compte ? <span>Inscrivez-vous</span></p>
+                </form>
+            </div>  
 
-              <button className="submit-button" type="submit">Connecter</button>
-          </form>
 
-              <p className="redirect-login">Vous avez pas de Compte? <span>Inscivez-vous</span></p>
-            
+         
         </div>
     )
 }

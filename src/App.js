@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom"
 import Authentication from './Routes/Authentication'
+import './App.css'  
 
 function App() {
 

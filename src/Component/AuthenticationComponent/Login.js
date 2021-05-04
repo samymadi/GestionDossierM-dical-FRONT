@@ -3,41 +3,40 @@ import "../../Styles/AuthenticationsStyle/Login-Signin.css"
 import Checkbox from '../ControlComponent/Checkbox/Checkbox' 
 function Login() {
 
-    const [animationClass,setAnimationClass] = useState("signin-login");
+    const [animationClass,setAnimationClass]= useState("signin-login-inscription")
 
     useEffect(()=>{
-        setAnimationClass("signin-login-anime");
+        setAnimationClass("signin-login-anime")
     },[])
 
 
     return (
         <div className={animationClass}>
-            <form>
-                <p>Email</p>
-                <div className="container-input">
-                    <input type="email"/>
-                </div>
-                <div className="confirmation-password">
-                    <div>
-                        <p>Password</p>
-                        <div className="container-input login-form">
-                            <input type="password"/>
-                        </div>
-                    </div>
-                    <div>
-                        <p>Confirmer</p>
-                        <div className="container-input login-form">
-                            <input type="password"/>
-                        </div>
-                    </div>
-                </div>
-                <div className="additional-info">
-                    <Checkbox>Accepter les termes et les conditions</Checkbox>
-                </div>
 
-                <button className="submit-button">S'inscrire</button>
-                
+            <form>
+                <div className='input-container'>
+                    <input type="email" placeholder="Email"/>
+                    <p className="warning-message">Email</p>
+                </div>
+                <div className="input-password-container">
+                    <div className=" input-container input-container-login">
+                        <input type="password" placeholder="Password"/>
+                        <p>Password</p>
+                    </div>
+                    <div className="input-container input-container-login">
+                        <input type="password" placeholder="Confirmer"/>
+                        <p>Confirmer</p>
+
+                    </div>
+                </div>
+                <div className="input-container" >
+                 <Checkbox>Accepter les termes et les conditions</Checkbox>
+                </div>
+                <button className="button-input">S'inscrire</button>
+                <p className="goto-Login">Vous avez deja un Compte ? <span>Connextez-vous</span></p>
             </form>
+
+          
         </div>
     )
 }

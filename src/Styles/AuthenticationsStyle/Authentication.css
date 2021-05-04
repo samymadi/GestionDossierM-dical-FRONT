@@ -1,4 +1,5 @@
 :root{
+    --backgroound:#F9F9F9;
     --primaryColor: #7CC8CB;
     --primaryColorLowOpacity:rgb(124, 200, 203,0.6);
     --thirdColor:#A89E9E;
@@ -6,104 +7,140 @@
 }
 
 
-.Authentication{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #EBEBEB;
-    font-family: 'Roboto', sans-serif;
+.selected-Connexion{
+    transform: translate(0px);
+}
+.selected-Inscription{
+    transform: translate(104px);    
 }
 
-.Authentication .main{
+.signin-login-anime{
+    opacity: 1;
+    transform: translate(0px);
+    transition-duration: 1000ms;
+    transition-timing-function: ease-in-out;
+}
+
+.Authentication{ 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--backgroound);
+    font-family: 'Roboto', sans-serif;
+    overflow: auto;
+}
+
+.main{
     display: flex;
-    margin: 45px auto;
+    margin: 50px auto;
     width: 70%;
-    height: 80%;
+    min-width: 700px;
+    height: 450px;
     border-radius: 7px;
     background-color: white;
     box-shadow: 3px 5px 15px lightgray;
+    
 }
 
-
-.illustration{
+.container-img{
     flex: 0.4;
     background: url(../../Assests/Login-img.jpg);
     background-size: cover;
     background-position: right;
+    
 }
-
-.login-singIn{
+.container-content{
+    flex: 0.6;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    flex: 0.6;
+
 }
 
-header{
+.header-container{
+    flex:0.5;
     display: flex;
-    position: relative;
-    flex: 0.05;
-    width: fit-content;
-    margin: 7px auto;
+    justify-content:start;
+    margin-left: 45px;
     
-
+   
 }
 
-header p {
-    width: 100px;
-    text-align: center;
-    line-height: 7px;
-    font-size: 19px;
-    font-weight: 500;
-    cursor: pointer;
-    color:var(--thirdColor);
-}
-
-header p:first-child{
-    margin-right: 15px; 
-}
-
-.selected-bar-style{
-    position: absolute;
-    bottom:0;
-    left: 0;
-    height: 3.5px;
-    width: 100px;
-    border-radius: 5px;  
-    box-shadow: 1px 1px 10px lightgray;
-    background-color: var(--primaryColor);
-}
-
-.selected-Connexion{
-    transform: translate(0px);
-    transition-duration: 280ms;
-    transition-property: transform;
-    transition-timing-function: ease;
-}
-.selected-Inscription{
-    transform: translate(115px);
-    transition-duration: 280ms;
-    transition-property: transform;
-    transition-timing-function: ease;
-}
-
-.selected-title{
-    color: var(--primaryColor);
-}
-
-
-.form-input{
-    flex: 0.95;
-    text-align: center;
-    margin: 11px;
+.form-container{
+    flex:9;
     padding-top: 50px;
 }
 
-
-.copy-right{
-    color: var(--thirdColor);
-    font-size: 13px;
-    margin: 5px auto;
-    bottom: 0;
-
+.footer-container{
+    flex: 0.5;
 }
+
+.title-options{
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    color: var(--thirdColor);
+
+     
+}
+
+.title-options p:nth-child(1){
+    margin-right: 30px;
+}
+
+.selected-bar{
+    position: absolute;
+    width: 90px;
+    height: 3px;
+    bottom: 8px;
+    left: -3px;
+    background-color: var(--primaryColor);
+    box-shadow: 3px 3px 7px lightgray;
+    border-radius: 15px;
+    transition-duration: 500ms;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+
+.title-options p{
+    width: 75px;
+    font-size: 18px;
+    cursor: pointer;
+    
+}
+
+.selected-title{
+    color :var(--primaryColor);
+    transition-timing-function: ease-out;
+    transition-duration: 350ms;
+}
+
+
+
+.footer-container p{
+    font-family: sans-serif;
+    color:var(--thirdColor);
+    font-size: 10px;
+    text-align: center;
+    line-height: 0;
+    user-select: all;
+}
+
+
+@media screen and (max-width: 741px){
+    .container-img{
+        display: none;
+    }
+    .container-content{
+        flex: 1;
+    }
+
+    .main{
+        width: 95%;
+        min-width: 350px;
+    }
+}
+
+
+
