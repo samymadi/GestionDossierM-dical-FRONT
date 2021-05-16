@@ -1,33 +1,40 @@
 
 
-.signin-login-inscription{
+.signin_login_inscription{
     opacity: 0.4;
     transform: translate(-25px); 
 }
-.signin-login-connexion{
+.signin_login_connexion{
     opacity: 0.4;
     transform: translate(+25px); 
 }
 
+.signin_login_anime{
+    opacity: 1;
+    transform: translate(0px);
+    transition-duration: 1000ms;
+    transition-timing-function: ease-in-out;
+}
 
-.input-container{
+
+.input_container{
     width: 70%;
     margin: 5px auto;   
 }
 
-.simple-message{
+.simple_message{
     color :var(--thirdColor);
 }
-.warning-message{
+.warning_message{
     color:rgb(250, 169, 19)
 }
-.error-message{
+.error_message{
     color: red;
 }
 
 
 
-.input-more{
+.input_more{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +43,7 @@
 }
 
 
-.forgot-password{
+.forgot_password{
     margin-top: 5px;
     text-decoration: none;
     color: var(--primaryColor);
@@ -45,7 +52,7 @@
     
 }
 
-.input-container input{
+.input_container input{
     outline: none;
     height: 35px;
     width: 95%;
@@ -57,41 +64,37 @@
     transition-property: border;
     font-size: 15px;
     padding-left: 11px;
-    
-    
-    
 }
 
-.input-password-container{
+.input_password_container{
     display: flex;
     margin: 5px auto ;
     width: 70%;
     justify-content: space-between;
 }
 
-.input-password-container .input-container-login{
+.input_password_container .input_container_login{
     width: 180px;
     margin: 0;
 }
-.input-password-container .input-container-login input{
+.input_password_container .input_container_login input{
     width: 90%;
 }
-.input-container p{
+.input_container p{
     margin-bottom: 5px;
     margin-left: 10px;
     margin-top: 2px;
     font-size: 12px;
-    /* visibility: hidden; */
     
 }
 
-.input-container input:focus{
+.input_container input:focus{
     outline: none;
     border: 2px solid var(--primaryColorLowOpacity);
    
 }
 
-.button-input{
+.button_input{
     margin: 40px auto;
     margin-bottom: 20px;
     display: block;
@@ -109,19 +112,19 @@
     transition-property: opacity;
 }
 
-.button-input:hover{
+.button_input:hover{
     opacity: 0.8;
 }
-.button-input:focus{
+.button_input:focus{
     outline: none;
 }
 
-.goto-Login{
+.goto_Login{
     text-align: center;
     font-size: 13px;
     color:var(--thirdColor);
 }
-.goto-Login span{
+.goto_Login span{
     color: var(--primaryColor);
     font-weight: bold;
     cursor: pointer;
@@ -129,22 +132,22 @@
 
 
 @media screen and (max-width: 741px){
-    .input-more{
+    .input_more{
         display: block;
         text-align: center;
     }
     
-    .input-password-container .input-container-login input{
+    .input_password_container .input_container_login input{
         width: 80%;
     }
 }
 
 @media screen and (max-width:1240px) {
-    .input-password-container .input-container-login input{
+    .input_password_container .input_container_login input{
         /* width: 60%; */
     }
 
-    .input-password-container .input-container-login{
+    .input_password_container .input_container_login{
         width: 140px;
         
     }

@@ -1,20 +1,21 @@
 :root{
-    --backgroound:#F9F9F9;
-    --primaryColor: #7CC8CB;
+    --background:#ececec;
+    --primaryColor:#1EC5CC;
+    --secondColor: #FD556E;
     --primaryColorLowOpacity:rgb(124, 200, 203,0.6);
     --thirdColor:#A89E9E;
 
 }
 
 
-.selected-Connexion{
+.selected_Connexion{
     transform: translate(0px);
 }
-.selected-Inscription{
+.selected_Inscription{
     transform: translate(104px);    
 }
 
-.signin-login-anime{
+.signin_login-anime{
     opacity: 1;
     transform: translate(0px);
     transition-duration: 1000ms;
@@ -26,15 +27,15 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    background-color: var(--backgroound);
+    background-color: var(--background);
     font-family: 'Roboto', sans-serif;
     overflow: auto;
 }
 
 .main{
     display: flex;
-    margin: 50px auto;
-    width: 70%;
+    margin: 100px auto;
+    width: 65%;
     min-width: 700px;
     height: 450px;
     border-radius: 7px;
@@ -43,39 +44,41 @@
     
 }
 
-.container-img{
-    flex: 0.4;
-    background: url(../../Assests/Login-img.jpg);
+.container_img{
+    flex: 0.45;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+    background: url(../../Assests/Login-img2.jpg);
     background-size: cover;
-    background-position: right;
+    background-position: center;
     
 }
-.container-content{
-    flex: 0.6;
+.container_content{
+    flex: 0.55;
     display: flex;
     flex-direction: column;
 
 }
 
-.header-container{
+.header_container{
     flex:0.5;
     display: flex;
     justify-content:start;
-    margin-left: 45px;
+    margin-left: 45px;  
     
    
 }
 
-.form-container{
+.form_container{
     flex:9;
     padding-top: 50px;
 }
 
-.footer-container{
+.footer_container{
     flex: 0.5;
 }
 
-.title-options{
+.title_options{
     position: relative; 
     display: flex;
     justify-content: center;
@@ -85,11 +88,11 @@
      
 }
 
-.title-options p:nth-child(1){
+.title_options p:nth-child(1){
     margin-right: 30px;
 }
 
-.selected-bar{
+.selected_bar{
     position: absolute;
     width: 90px;
     height: 3px;
@@ -103,14 +106,14 @@
     transition-timing-function: ease;
 }
 
-.title-options p{
+.title_options p{
     width: 75px;
     font-size: 18px;
     cursor: pointer;
     
 }
 
-.selected-title{
+.selected_title{
     color :var(--primaryColor);
     transition-timing-function: ease-out;
     transition-duration: 350ms;
@@ -118,7 +121,7 @@
 
 
 
-.footer-container p{
+.footer_container p{
     font-family: sans-serif;
     color:var(--thirdColor);
     font-size: 10px;
@@ -129,10 +132,10 @@
 
 
 @media screen and (max-width: 741px){
-    .container-img{
+    .container_img{
         display: none;
     }
-    .container-content{
+    .container_content{
         flex: 1;
     }
 

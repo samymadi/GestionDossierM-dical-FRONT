@@ -1,15 +1,15 @@
 import {Link} from 'react-router-dom'
 import {useEffect,useState} from 'react'
 import Checkbox from '../ControlComponent/Checkbox/Checkbox.js'
-import '../../Styles/AuthenticationsStyle/Login-Signin.css'
+import  Styles from '../../Styles/AuthenticationsStyle/Login-Signin.module.css'
 
 
 function SignIn(){
 
-    const [animationClass,setAnimationClass]= useState("signin-login-connexion")
+    const [animationClass,setAnimationClass]= useState(Styles.signin_login_connexion);
 
     useEffect(()=>{
-        setAnimationClass("signin-login-anime")
+        setAnimationClass(Styles.signin_login_anime)
     },[])
 
     return (
@@ -17,22 +17,22 @@ function SignIn(){
 
             <div>
                 <form>
-                    <div className="input-container">
+                    <div className={Styles.input_container}>
                         <input type="email" placeholder="Email"/>
-                    <p><span style={{textAlign:"center",color:'red',display:"hidden"}}>Veuillez saisir votre email</span></p>
+                    <p><span style={{textAlign:"center",color:'red',display:"hidden" }}>Veuillez saisir votre email</span></p>
                     </div>
-                    <div className="input-container">
+                    <div className={Styles.input_container}>
                         <input type="password" placeholder="password"/>
                         <p><span style={{textAlign:"center",color:'red'}}>Veuillez saisir votre email</span></p>
                         
                     </div>
-                    <div className="input-container input-more">
+                    <div className={`${Styles.input_container} ${Styles.input_more}`}>
                         <Checkbox>Remember Me</Checkbox>
-                        <Link className="forgot-password">Mot de passe oublié ?</Link>
+                        <Link className={Styles.forgot_password}>Mot de passe oublié ?</Link>
                     </div>
 
-                    <button className="button-input">Connecter</button>
-                    <p className="goto-Login">Vous avez pas de compte ? <span>Inscrivez-vous</span></p>
+                    <button className={Styles.button_input}>Connecter</button>
+                    <p className={Styles.goto_Login}>Vous avez pas de compte ? <span>Inscrivez-vous</span></p>
                 </form>
             </div>  
 

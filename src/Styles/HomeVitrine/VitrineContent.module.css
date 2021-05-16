@@ -1,0 +1,144 @@
+.home_article{
+    display: flex;
+    height: 400px;
+}
+
+.container_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0.5;
+}
+
+.container_info p {
+    font-size: 36px;
+}
+
+.container_image{
+    flex: 0.5;
+    
+}
+
+.container_image img {
+    height: 400px;
+    margin-left: 130px;
+}
+
+
+.corona_article{
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+}
+
+.container_icon img{
+    width: 50px;
+}
+
+.container_details{
+    line-height: 30px;
+    margin-left: 25px;
+}
+
+.container_details a{
+    text-decoration: none;
+    color: var(--secondColor);
+}
+
+.container_details span{
+    font-weight: bold;
+}
+
+
+
+.container_button{
+    display:flex;
+    align-self: center;
+  }
+  
+  .button{
+    opacity: 0.9;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    width: 120px;
+    height: 30px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  
+  .button:hover{
+    opacity: 1;
+  }
+  
+  .btn_signin{
+    background-color: var(--primaryColor);
+    color: white;
+    margin-right: 7px;
+  }
+  
+  
+  .btn_login{
+    background-color: white;
+    color: var(--primaryColor);
+    border: 2px solid var(--primaryColor);
+    
+  }
+
+.presentation{
+    margin-bottom: 100px;
+}  
+
+.presentaions_main{
+    display: flex;
+}
+
+
+.presentation > p {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 0;
+
+}
+
+.presentation .container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+
+}
+
+.presentation .container:not(:nth-child(2)) {
+    padding-top: 150px;
+
+}
+.presentation .container img {
+    height: 180px;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.presentation .container img:hover {
+    transform: scale(1.05);
+}
+
+.presentation .container p {
+    text-align: center;
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.container p:nth-child(3) {
+    text-align: center;
+    padding: 0px 100px;
+    color: rgb(78, 78, 78);
+    font-weight: normal;
+  
+}
+.presentation .container  span {
+    color: var(--secondColor);
+    font-size: 35px;
+}
+
+

@@ -1,17 +1,18 @@
 import {useState} from 'react'
-import '../Styles/AuthenticationsStyle/Authentication.css'
+import {useParams} from 'react-router-dom'
+import  Styles  from '../Styles/AuthenticationsStyle/Authentication.module.css'
 import SignIn from "../Component/AuthenticationComponent/SignIn"
 import Login from "../Component/AuthenticationComponent/Login"
 
 
 function Authentication() {
 
+    const {signin} = useParams();
+    console.log(signin);
 //---------------Variables State Style-------------------------- 
-    const [LoginOrSignin,setLoginOrSignin]= useState(true);
-// //---------------Variavles State---------------------------------
-
-
-
+    const [LoginOrSignin,setLoginOrSignin]= useState((signin === "true" ?  true : false));
+    console.log(LoginOrSignin);
+// //---------------Variables State---------------------------------
 
 // //---------------Event Listenner-----------------------------------
     const handleConnexionClick = ()=>{
@@ -22,25 +23,25 @@ function Authentication() {
         setLoginOrSignin(false);
     }
     return (
-        <div className='Authentication'>
-            <main className="main">
+        <div className={Styles.Authentication}>
+            <main className={Styles.main}>
 
 
-                <div className="container-img"></div>
+                <div className={Styles.container_img}></div>
 
-                <div className="container-content">
-                        <header className="header-container">
-                            <div className="title-options">
-                                    <p  className={LoginOrSignin ? "selected-title ": ""}  onClick={handleConnexionClick}>Connexion</p>
-                                    <p  className={!LoginOrSignin ? "selected-title": ""}  onClick={handleInscriptionClick}>Inscription</p>
-                                    <span className={"selected-bar "+(LoginOrSignin ? "selected-Connexion": "selected-Inscription")}></span>
+                <div className={Styles.container_content}>
+                        <header className={Styles.header_container}>
+                            <div className={Styles.title_options}>
+                                    <p  className={LoginOrSignin ? Styles.selected_title: ""}  onClick={handleConnexionClick}>Connexion</p>
+                                    <p  className={!LoginOrSignin ? Styles.selected_title: ""}  onClick={handleInscriptionClick}>Inscription</p>
+                                    <span className={Styles.selected_bar+" "+ (LoginOrSignin ? Styles.selected_Connexion: Styles.selected_Inscription)}></span>
                             </div>
                         </header>
-                        <main className="form-container">
+                        <main className={Styles.form_container}>
                             {LoginOrSignin ? <SignIn></SignIn> : <Login></Login> }
                         </main>
-                        <footer className="footer-container">
-                            <p>@CopyRight 2021: Droits Réservées</p>
+                        <footer className={Styles.footer_container}>
+                            <p>@CopyRight 2021: Droits Réservés</p>
                         </footer>
                 </div>
 

@@ -1,0 +1,88 @@
+.email_confirmation{
+    position: absolute;
+    overflow: scroll;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    background-color: var(--background);   
+}
+
+.container{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    min-width: 400px;
+    height: 300px;
+    margin: 150px auto;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 5px 20px lightgray;
+    padding: 10px;
+    padding-bottom: 0;
+
+
+}
+
+.container img {
+    height: 60px;
+    width: 60px;
+    align-self: center;
+}
+
+.container input{
+    align-self: center;
+    outline: none;
+    border: 2px solid var(--thirdColor) ;
+    border-radius: 7px;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 15px;
+    transition-timing-function: ease-in;
+    transition-property: border-color;
+    transition-duration: .1s;
+    
+    
+}
+
+
+.container input:focus{
+    border: 2px solid var(--primaryColor);
+}
+
+.container button{
+    opacity: 0.7;
+    outline: none;
+    border: none;
+    background-color: white;
+    color:var(--primaryColor);
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition-timing-function: ease-in;
+    transition-property: opacity;
+    transition-duration: .1s;
+}
+
+.container button:hover{
+    opacity: 1;
+}
+
+
+.container p:nth-child(2){
+    font-weight: bold ;
+    
+}
+.container p:nth-child(6){
+    font-weight: bold ;
+    color: var(--thirdColor);
+    align-self: flex-start;
+    margin-bottom: 0;
+    margin-top:20px;
+    font-size: 14px;
+    cursor: pointer ;
+    
+}
