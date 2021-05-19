@@ -1,10 +1,19 @@
 import {Link} from 'react-router-dom'
-import {useEffect,useState} from 'react'
+import {useEffect,useState,useMemo} from 'react'
 import Checkbox from '../ControlComponent/Checkbox/Checkbox.js'
+import InputComponent from '../InputComponent/InputComponent'
 import  Styles from '../../Styles/AuthenticationsStyle/Login-Signin.module.css'
 
 
 function SignIn(){
+    
+
+    // -----------------------State Varibales----------------------------
+    // ------------------------------------------------------------------
+    const [email,setEmail] = useState("");
+    const [password,setPassword] =useState("");
+
+     
 
     const [animationClass,setAnimationClass]= useState(Styles.signin_login_connexion);
 
@@ -12,20 +21,28 @@ function SignIn(){
         setAnimationClass(Styles.signin_login_anime)
     },[])
 
+
+    // --------------EventListener-------------------------------------- 
+    // -----------------------------------------------------------------
+
+    const handleOnChangeEmail =(data)=>{
+            setEmail(data);
+    } 
+    const handleOnChangePassword =(data)=>{
+            setPassword(data);    
+    } 
+
     return (
         <div className={animationClass}>
 
             <div>
                 <form>
-                    <div className={Styles.input_container}>
-                        <input type="email" placeholder="Email"/>
-                    <p><span style={{textAlign:"center",color:'red',display:"hidden" }}>Veuillez saisir votre email</span></p>
-                    </div>
-                    <div className={Styles.input_container}>
-                        <input type="password" placeholder="password"/>
-                        <p><span style={{textAlign:"center",color:'red'}}>Veuillez saisir votre email</span></p>
-                        
-                    </div>
+                    <InputComponent  onChangeInput={handleOnChangeEmail} errorMessage="" >{{placeholder:"Email"}}</InputComponent>        
+                    <InputComponent  onChangeInput={handleOnChangePassword} password={true}>{{placeholder:"Password"}}</InputComponent>        
+                
+
+                   
+
                     <div className={`${Styles.input_container} ${Styles.input_more}`}>
                         <Checkbox>Remember Me</Checkbox>
                         <Link className={Styles.forgot_password}>Mot de passe oublié ?</Link>

@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    width: 400px;
-    margin: 0 auto;  /*Test*/
+    width: 100%;
+    /* background-color: tomato; */
 }
 
 .input_component p:nth-child(1) {
@@ -24,7 +24,7 @@
 }
 
 .container:focus {
-    background-color: aqua;    
+    /* background-color: aqua;     */
 }
 
 .border{
@@ -38,12 +38,14 @@
     background-color: #F5F5F5;
     padding-left: 11px;
     font-size: 16px;
+    width: 100%;
 }
 
 
 .container  img {
     flex: 0.1;
     cursor: pointer;
+    min-width: 47px;
     transform: scale(0.5);
 }   
 .container input:focus {

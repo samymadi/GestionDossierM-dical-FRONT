@@ -1,42 +1,31 @@
-
-
 .signin_login_inscription{
-    opacity: 0.4;
-    transform: translate(-25px); 
+    opacity: 0.7;
+    transform: translate(-10px); 
 }
 .signin_login_connexion{
-    opacity: 0.4;
-    transform: translate(+25px); 
+    opacity: 0.7;
+    transform: translate(+10px); 
 }
 
 .signin_login_anime{
     opacity: 1;
     transform: translate(0px);
-    transition-duration: 1000ms;
-    transition-timing-function: ease-in-out;
+    transition-duration: 450ms;
+    transition-timing-function: ease-in;
 }
 
 
 .input_container{
-    width: 70%;
-    margin: 5px auto;   
+    width: 100%; 
 }
-
-.simple_message{
-    color :var(--thirdColor);
-}
-.warning_message{
-    color:rgb(250, 169, 19)
-}
-.error_message{
-    color: red;
-}
-
+ 
 
 
 .input_more{
+    width: 95%;
     display: flex;
     justify-content: space-between;
+    margin-left: 13px;
     align-items: center;
     margin-top: 20px;
     padding: 0px 0px;
@@ -52,41 +41,11 @@
     
 }
 
-.input_container input{
-    outline: none;
-    height: 35px;
-    width: 95%;
-    border: 2px solid white;
-    border-radius:7px;
-    background-color: #F5F5F5;
-    transition-timing-function: ease-out;
-    transition-duration: 300ms;
-    transition-property: border;
-    font-size: 15px;
-    padding-left: 11px;
-}
 
 .input_password_container{
     display: flex;
-    margin: 5px auto ;
-    width: 70%;
-    justify-content: space-between;
 }
 
-.input_password_container .input_container_login{
-    width: 180px;
-    margin: 0;
-}
-.input_password_container .input_container_login input{
-    width: 90%;
-}
-.input_container p{
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-top: 2px;
-    font-size: 12px;
-    
-}
 
 .input_container input:focus{
     outline: none;

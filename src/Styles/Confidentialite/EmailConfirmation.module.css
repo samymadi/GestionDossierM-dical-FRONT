@@ -14,13 +14,11 @@
     width: 30%;
     min-width: 400px;
     height: 300px;
-    margin: 150px auto;
-    background-color: white;
+    margin: 75px auto;
+    margin-bottom: 15px;
     border-radius: 7px;
-    box-shadow: 0px 5px 20px lightgray;
-    padding: 10px;
-    padding-bottom: 0;
-
+    box-shadow: 3px 5px 20px lightgray;
+    padding: 10px 15px;
 
 }
 
@@ -83,6 +81,11 @@
     margin-bottom: 0;
     margin-top:20px;
     font-size: 14px;
-    cursor: pointer ;
+    cursor: pointer ;  
+}
+
+.container span {
+    font-weight:bold;
+    user-select: all;
     
 }

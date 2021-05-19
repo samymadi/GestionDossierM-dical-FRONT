@@ -1,7 +1,13 @@
-import React from 'react'
+import {useEffect} from 'react'
+import {useHistory} from 'react-router-dom'
 
 function Error404() {
 
+    const history = useHistory();
+
+    useEffect(()=>{
+        console.log(history);
+    })
 
     const style = {
         textAlign:"center",

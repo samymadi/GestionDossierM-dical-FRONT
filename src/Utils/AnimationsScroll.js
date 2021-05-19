@@ -7,20 +7,19 @@ function animationObserverOnScroll(navBarClass,backgroundClass,StyleClass){
     }
 
     const callback =(entries,observer)=>{
-        console.log(entries)
+       
        entries.forEach(entry => {
-           console.log(entry);
+          
 
         if(entry.intersectionRatio  <= 0.05)
         { 
             navBar.classList.add(StyleClass);
-            console.log(navBar.classList);
+            
             
         }
             else if(entry.intersectionRatio >= 0)
                 {
                 navBar.classList.remove(StyleClass);
-                console.log(entry.intersectionRatio);
                 }
        }); 
        

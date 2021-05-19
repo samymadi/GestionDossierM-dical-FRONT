@@ -38,12 +38,14 @@ function HomeVitrine() {
         
     }
     
-
+    
 
     // UseEffect---------------------------------------------------------
     useEffect(()=>{
-      console.log("list class ",navBar.current.classList[0]);
       animationObserverOnScroll(navBar.current.classList[0],background.current.classList[0],Styles.navigation_bar_Scrollstate);
+        // test---------------------------
+            console.log("historique",history);
+    
     },[])
 
 

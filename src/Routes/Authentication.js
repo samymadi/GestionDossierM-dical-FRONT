@@ -1,5 +1,5 @@
-import {useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {useState,useEffect} from 'react'
+import {useParams,useHistory} from 'react-router-dom'
 import  Styles  from '../Styles/AuthenticationsStyle/Authentication.module.css'
 import SignIn from "../Component/AuthenticationComponent/SignIn"
 import Login from "../Component/AuthenticationComponent/Login"
@@ -7,11 +7,16 @@ import Login from "../Component/AuthenticationComponent/Login"
 
 function Authentication() {
 
+    const history = useHistory();
+
+    useEffect(() => {
+            console.log(history);
+    })
+
     const {signin} = useParams();
-    console.log(signin);
 //---------------Variables State Style-------------------------- 
     const [LoginOrSignin,setLoginOrSignin]= useState((signin === "true" ?  true : false));
-    console.log(LoginOrSignin);
+
 // //---------------Variables State---------------------------------
 
 // //---------------Event Listenner-----------------------------------

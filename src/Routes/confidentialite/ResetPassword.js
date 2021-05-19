@@ -1,9 +1,35 @@
 import {useState} from 'react'
 
 import Styles from '../../Styles/Confidentialite/ResetPassword.module.css'
-import CyberSecurity from '../../Assests/Icons/CyberSecurity.png'
+import Protection from '../../Assests/Icons/Protection.png'
+
+import InputComponent from '../../Component/InputComponent/InputComponent'
 
 function ResetPassword() {
+    // -----------------State Variables------------------------------
+    // --------------------------------------------------------------
+    const [password,setPassword] = useState("");
+    const [newPassword,setNewPassword] = useState("");
+    const [confirmNewPassword,setConfirmNewPassword] = useState("");
+
+
+
+
+
+    // -----------------EventListener------------------------------
+    // ------------------------------------------------------------
+
+
+    const handlePasswordChange = (data)=>{
+            setPassword(data);
+    }
+    const handleNewPasswordChange = (data)=>{
+            setNewPassword(data);
+    }
+    const handleConfirmNewPasswordChange = (data)=>{
+            setConfirmNewPassword(data);
+    }
+
 
 
     
@@ -12,15 +38,15 @@ function ResetPassword() {
             <div className={Styles.container}>
                 <div className={Styles.inputs_container}>
                     <p>Réinitialiser votre mot de passe</p>
-                    <input type="text" placeholder="Mot de passe actuel" />
+                    <InputComponent password={true} onChangeInput={handlePasswordChange} >{{placeholder:"Mot de passe actuel"}}</InputComponent>
                     <div>
-                        <input type="password" placeholder="Nouvreau mot de passe"  />
-                        <input type="password"  placeholder="Confirmer"/>
+                        <InputComponent password={true} onChangeInput={handleNewPasswordChange} >{{placeholder:"Nouveau Mot de passe"}}</InputComponent>
+                        <InputComponent password={true}  onChangeInput={handleConfirmNewPasswordChange}  >{{placeholder:"Confirmer Mot de passe "}}</InputComponent>
                     </div>
+                    <button className={Styles.button_input}>Confirmer</button>
                 </div>
                 <div className={Styles.container_img}>
-                   <div className={Styles.separation}></div>
-                   <img src={CyberSecurity}/>
+                   <img src={Protection}/>
                 </div>
             </div>
        </div>
