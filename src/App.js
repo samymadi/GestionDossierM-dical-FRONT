@@ -6,19 +6,24 @@ import Error404 from './Routes/Error404'
 import EmailConfirmation from './Routes/confidentialite/EmailConfirmation'
 import ResetPassword from './Routes/confidentialite/ResetPassword';
 import Account from './Routes/Account/Account'
+import Dashboard from './Routes/Dashboard/Dashboard';
 import './App.css'  
 
 
 
+
 // ------Compnent test import -------------------------------------
-import Test from './Component/InputComponent/InputComponent'
+import Test from './Component/DashBoard/NotifPopUp'
+import Send from './Assests/Icons/Send.png'
+import DashBoardMenu from './Component/DashBoard/DashBoardMenu';
+import DossierMed from './Component/DashBoard/DossierMed';
 
 function App() {
   
   const [signin,setSignin]= useState(true);  
-  
+  const [value,setValue]= useState("Madi");
     
-    
+      
 
     return (
 
@@ -27,8 +32,8 @@ function App() {
             <Switch>
               {/* Test Routes----------------------------------------------- */}
               <Route path="/test/ComponentTest">
-                <Test errorMessageprops=" ">{{placeholder:"name",inputTitle:"Email"}}</Test>
-                <Test password={true}>{{placeholder:"password",inputTitle:"password"}}</Test>
+                <Test></Test>
+               
               </Route>
 
               {/* Principal Routes---------------------------------------------- */
@@ -36,7 +41,7 @@ function App() {
               }
 
               {/* -----------Confidentialité----------------------------------------- */}
-              <Route path="/Authentication/:signin" strict exact>
+              <Route  path="/Authentication/:signin" strict exact>
                   <Authentication/> 
               </Route>
 
@@ -52,6 +57,9 @@ function App() {
                  
                   }
                 </Route>
+
+                <Route path="/Dashboard"><Dashboard/></Route>
+              
 
 
               {/* ----------Home------------------------------------------------------------- */}
@@ -70,3 +78,6 @@ function App() {
 }
 
 export default App;
+
+
+

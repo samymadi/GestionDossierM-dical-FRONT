@@ -1,0 +1,17 @@
+.dash_container{
+    display: flex; 
+    height: 100%;  
+
+}
+
+.left_container{
+    flex: 2.5;
+    margin-right: 5px;
+}
+
+.right_container{
+    flex:7.5;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0px 3px 6px lightgray;
+}

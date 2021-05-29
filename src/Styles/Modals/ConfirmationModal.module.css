@@ -1,0 +1,123 @@
+.confirmation_modal{
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    bottom: 0;
+    top: 0;
+    transition: all 100ms ease-in; 
+}
+
+.animate_back{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.modal_container{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    min-width: 300px;
+    background-color:  rgb(245, 245, 245);
+    margin: 100px auto;
+    border-radius: 7px;
+    padding: 10px 15px;
+    transform: scale(0.7);
+    transition: transform 200ms ease-out;
+    user-select: none;
+    
+}
+
+
+.animate {    
+ transform: scale(1);
+}
+
+.modal_message{
+    flex: 5;
+}
+
+
+
+.modal_message p:first-child{
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.modal_message p:last-child{
+    color: var(--thirdColor);
+    margin: 0;
+    margin-bottom: 15px;    
+}
+
+.data_container{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    flex: 3;
+}
+
+.data_container span {
+    display: flex;
+}
+
+.data_container p {
+    color: var(--thirdColor);
+    font-weight: normal;
+}
+
+.data_container p:first-child {
+    color: black;
+    font-weight: bold;
+    margin-right: 5px;
+    
+}
+
+
+
+
+
+.buttons {
+    padding-top: 15px;
+    border-top: 1px solid lightgray;
+    display: flex;
+    justify-content: flex-end;
+    flex: 1.5;
+}
+
+.modal_container img {
+    flex: 0.5;
+    width: 20px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: transform 250ms ease-out;
+}
+
+.modal_container img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+.cancel_btn {
+    background-color: inherit;
+    border: none;
+    margin-right: 10px;
+    color: var(--secondColor);
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 200ms ease;
+    font-weight: bold;
+
+}
+
+.cancel_btn:hover {
+    transform: translateY(-1px);
+}
+
+.confirm_btn{
+    margin-bottom: 0;
+}

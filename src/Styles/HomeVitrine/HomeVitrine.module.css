@@ -1,13 +1,6 @@
-::-webkit-scrollbar{
-  display: none;
-}
 
-:root{
-  scroll-behavior: smooth;
-}
 
 .home_vitrine * {
-  
   font-family:"Cabin","sans-serif";
 }
 

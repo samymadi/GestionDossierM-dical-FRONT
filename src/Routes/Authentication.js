@@ -1,17 +1,14 @@
 import {useState,useEffect} from 'react'
 import {useParams,useHistory} from 'react-router-dom'
 import  Styles  from '../Styles/AuthenticationsStyle/Authentication.module.css'
-import SignIn from "../Component/AuthenticationComponent/SignIn"
-import Login from "../Component/AuthenticationComponent/Login"
+import  SignIn  from "../Component/AuthenticationComponent/SignIn"
+import  Login   from "../Component/AuthenticationComponent/Login"
 
 
 function Authentication() {
 
     const history = useHistory();
 
-    useEffect(() => {
-            console.log(history);
-    })
 
     const {signin} = useParams();
 //---------------Variables State Style-------------------------- 

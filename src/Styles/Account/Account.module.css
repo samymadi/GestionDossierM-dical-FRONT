@@ -1,3 +1,6 @@
+
+  
+
 .account{
     position: absolute;
     display: flex;
@@ -8,45 +11,57 @@
 
 .account aside{
     flex: 0.25;
-    background-color: #f5f5f5;
-    
+    background-color: #fbfbfb;
+    overflow-y:scroll ;
+    height: 100%;
 }
 
 .account main {
     flex: 0.75;
+    height: 100%;
+    overflow-y: scroll;
+    margin-right: 5px;
 }
 
 .main_container{
     width: 75%;
-    height: 100%;
-    overflow-y: scroll;
+    padding: 20px;
     /* background-color: lightcoral; */
 }
 
 .nav_container{
     width: 70%;
-    height: 100%;
     margin-left: auto;
-    overflow-y: scroll;
-    
 }
 
 .container_element{
-    margin-top: 80px;
+    margin-top: 80px;   
+}
+
+
+
+.container_element2{
     position: relative;
 }
 
 .container_element2 p  {
+    
     margin-bottom: 20px;
     margin-left: 25px;
     color: var(--thirdColor);
     cursor: pointer;
 }
 
-.container_element2 p:last-child{
+.container_element2 p:nth-child(3){
     font-style: italic;
     color: var(--secondColor);
     font-weight: 600;
+    user-select: none;
+    transition: transform 250ms ease-in;
+}
+
+.container_element2 p:nth-child(3):hover {
+    transform: skew(1.05);
 }
 
 
@@ -71,7 +86,7 @@
 .container_element a {
     font-weight: bold;
     text-decoration: none;
-    color: var(--titleColor);
+    color: black;
     font-size: 17px;
     
 }
@@ -92,14 +107,17 @@
     margin-top: 25px;
 }
 
-.container_element .selected_bar {
-    display: none;
+
+
+ .selected_bar {
+    /* display: none; */
     position: absolute;
-    width: 3px;
-    height: 40px;
-    top: 1px;
-    right: 0;
+    width: 4px;
+    height: 35px;
+    top: -10px;
+    left: 0;
     border-radius: 20px;
     background-color: var(--secondColor);
-    transition-duration:250ms;
-}   
+    transition: transform 250ms ease-in;
+} 
+

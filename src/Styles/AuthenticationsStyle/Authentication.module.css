@@ -2,14 +2,21 @@
     --background:white;
     --primaryColor:#1EC5CC;
     --secondColor: #FD556E;
+    --secondColorLowOpacity:rgb(253, 83, 109,0.1);
+    --secondColorLowOpacity2: #fabec7;
     --primaryColorLowOpacity:rgb(124, 200, 203,0.6);
     --thirdColor:#A89E9E;
     --titleColor: #605D5D;
+    --policeColor: #8E8E8E;
 }
 
-*{
+  /* Handle */
+
+
+  :root{
     scroll-behavior: smooth;
-}
+  }
+
 
 
 .selected_Connexion{

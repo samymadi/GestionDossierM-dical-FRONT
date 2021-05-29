@@ -1,0 +1,126 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    min-height: 340px;
+    max-width: 329px;
+    margin-bottom: 5px;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0px 3px 6px lightgray;
+    padding: 15px 5px;
+}
+
+.new_rappel_button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    width: 70%;
+    padding: 0px 15px;
+    margin-bottom: 10px;
+    align-self:center ;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px lightgray;
+    color: #656565;
+    font-size: 14px;
+    cursor: pointer;
+    transition: box-shadow 300ms ease-in-out;
+}
+
+.new_rappel_button img{
+    height: 23px;
+}
+
+.new_rappel_button:hover{
+    box-shadow: 0px 4px 15px lightgray ;
+    
+}
+
+.rappel_list{
+    overflow-y: scroll; 
+}
+
+
+.rappel_list::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.rapple_box_container{
+    position: relative;
+    height: 60px;
+    border-radius: 2px;
+    background-color: #E7FDFE;
+    border-left: 4px solid var(--primaryColor);
+    margin: 0px 5px 10px 5px;
+    padding: 7px 8px;
+    cursor: pointer;
+    transition: background-color 250ms ease-out,transform 250ms ease-in-out;
+}
+
+.rapple_box_container:hover{
+    background-color: #b6fdff;
+    transform: scale(1.02);
+}
+
+.rapple_box_container div:first-child{
+    position: relative;
+    width: 180px;
+}
+
+
+
+.rappel_title{
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color:black;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    width: 150px;
+}
+
+.rappel_content{
+    color: var(--thirdColor);
+    font-size: 14px;
+    margin: 0px 0px 0px 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}
+
+.rappel_date{
+    
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--thirdColor);
+    margin: 10px 0px 0px auto;
+    width: fit-content;
+}
+
+
+.icon_new_rappel{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 3px;
+    right: 0;
+    border-radius: 50%;
+    background-color: var(--primaryColor);
+}
+
+.rapple_box_container img {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    transition: transform 250ms ease-out;
+
+}
+
+.rapple_box_container img:hover{
+    transform: scale(1.1);
+}
