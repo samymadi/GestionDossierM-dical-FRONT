@@ -34,7 +34,9 @@ function Dashboard() {
             setSelectedBar({transform:"translateX(119px)",width:"121px"})
                 else if(location =="/dashboard/message")
                     setSelectedBar({transform:"translateX(269px)",width:"75px"});
-    },[]);
+
+                    console.log("location: ",location)
+    },[location]);
     
 
 
@@ -61,10 +63,10 @@ function Dashboard() {
         <div className={dashboard}>
             <nav className={nav_bar}>
                 <div className={title_navigation} onClick={handleTitleClick}>
-                    <Link to='/dashboard' style={{color : (selectedBar.width ==='90px' && "black")}}>Dashboard</Link>
-                    <Link to='/dashboard/DossierMedical' style={{color : (selectedBar.width ==='121px' && "black")}}>Dossier Médical</Link>
-                    <Link style={{color : (selectedBar.width ==='75px' && "black")}}>Message</Link>
-                    <Link>Compte</Link>
+                    <Link push to='/dashboard' style={{color : (selectedBar.width ==='90px' && "black")}}>Dashboard</Link>
+                    <Link push to='/dashboard/DossierMedical' style={{color : (selectedBar.width ==='121px' && "black")}}>Dossier Médical</Link>
+                    <Link push to='/Messagerie' style={{color : (selectedBar.width ==='75px' && "black")}}>Message</Link>
+                    <Link push to="/account">Compte</Link>
                     <div className={selected_bar} style={selectedBar} ></div>
                 </div>
                 <div className={icons_buttons}>

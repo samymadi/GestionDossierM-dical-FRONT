@@ -42,7 +42,7 @@ function UpdateUserModal({...element}) {
             setAnimation(animate_back);
             setAnimationModal(animate);
         });
-    })
+    },[])
 
    
 

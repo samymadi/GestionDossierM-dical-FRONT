@@ -13,7 +13,7 @@ import './App.css'
 
 
 // ------Compnent test import -------------------------------------
-import Test from './Component/DashBoard/NotifPopUp'
+import Test from './Component/SelectInputComponent/SelectInput'
 import Send from './Assests/Icons/Send.png'
 import DashBoardMenu from './Component/DashBoard/DashBoardMenu';
 import DossierMed from './Component/DashBoard/DossierMed';
@@ -32,7 +32,7 @@ function App() {
             <Switch>
               {/* Test Routes----------------------------------------------- */}
               <Route path="/test/ComponentTest">
-                <Test></Test>
+                <Test optionsList={["generaliste","sepcialiste"]} value={value} setValue={setValue} title="Type d'analysedkldklsdksl"></Test>
                
               </Route>
 

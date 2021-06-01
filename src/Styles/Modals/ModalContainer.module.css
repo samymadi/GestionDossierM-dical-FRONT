@@ -1,0 +1,49 @@
+.container{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 100ms ease-in; 
+    overflow-y: scroll;
+    z-index: 2;
+}
+
+.modal_container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    background-color:  white;
+    margin: 50px auto;
+    border-radius: 4px;
+    padding: 25px 15px 15px 15px;
+    transform: scale(0.7);
+    transition: transform 200ms ease-out , height 400ms ease-in-out;
+    user-select: none;
+}
+
+
+.animate{
+    transform: scale(1);
+}
+
+.animate_back{
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+
+
+.delete_img  {
+    position:absolute;
+    right: 10px;
+    top: 7px;
+    height: 20px;
+    transition: transform 250ms ease-out;
+    cursor: pointer;
+}
+
+.delete_img:hover{
+    transform: scale(1.1);
+}
+

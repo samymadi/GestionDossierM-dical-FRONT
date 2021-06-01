@@ -1,0 +1,61 @@
+.container{
+    position: relative;
+    width: 250px;
+    cursor: pointer;
+}
+
+.button_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border:2px solid #c4c4c4;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.button_container img {
+   position: absolute;
+   right: 3px; 
+   margin-top: 3px;
+}
+
+.button_container p {
+    margin: 0;
+    user-select: none;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding: 0px 4px;
+    margin-right: 5px;
+
+}
+
+.options::-webkit-scrollbar{
+    display: none;
+}
+.options{
+    position: absolute;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-top: 2px;
+    height: 150px;
+    overflow-y: scroll;
+    width: 248px;
+    background-color: white;
+}
+
+.options p {
+    text-align: center;
+    margin: 0;
+    line-height: 35px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding: 0px 4px;
+    transition: background-color 100ms ease-in;
+}
+
+.options p:hover {
+    background-color: var(--secondColorLowOpacity);
+}

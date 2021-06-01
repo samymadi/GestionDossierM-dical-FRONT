@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.rappel_title{
+    margin: 0;  
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.content_container{
+    margin-top: 25px;
+    margin-left: 15px;
+    padding: 5px 15px 10px 15px;
+    border-left: 3px solid var(--primaryColor);
+    border-radius: 3px;
+    min-height: 70px;
+}
+
+.content_rappel{
+    margin: 0;
+    font-size: 15px;
+    color: #535353;
+}
+
+.date_rappel{
+    font-size: 13px;
+    align-self: flex-end;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.button_container{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-self: center;
+    width: 25%;
+    
+}
+
+.button_container button{
+    border: none;  
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 250ms ease-in;
+
+}
+
+.button_container button:first-child{
+    color: var(--secondColor);
+}
+.button_container button:last-child{
+    color: var(--primaryColor);
+}
+
+.button_container button:hover{
+    transform: translateY(-2px);
+}

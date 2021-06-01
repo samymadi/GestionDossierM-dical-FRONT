@@ -1,6 +1,8 @@
 .dashboard{
     position: absolute;
-    width: 100%;
+    /* rihgtwidth: 100%; */
+    right: 0;
+    left:0;
     bottom: 0;
     top: 0;
     background-color: #F5F5F5;
@@ -29,6 +31,7 @@
     top: 50px;
     bottom: 0;
     padding: 5px;
+    padding-right: 0;
     
 
 }
