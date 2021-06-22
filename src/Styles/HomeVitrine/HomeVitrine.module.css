@@ -1,4 +1,6 @@
-
+.home_vitrine::-webkit-scrollbar{
+  display: block;
+}
 
 .home_vitrine * {
   font-family:"Cabin","sans-serif";
@@ -21,7 +23,6 @@ background-color: lightgreen;
 
 .main{
   position: absolute;
-  top:50px;
   width: 100%;
   z-index: 0;
 
@@ -30,15 +31,26 @@ background-color: lightgreen;
 .footer{
  border-top: 1px solid lightgray;
 
+
 }
 
-.container_contact{
-  
-}
+
 
 .container_icons_reseaux_sociaux{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    width: fit-content;
+    width: 25%;
+    
+}
+
+.container_contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .container_contact img {
@@ -49,19 +61,13 @@ background-color: lightgreen;
 
 .container_contact p{
   text-align: center;
-  margin-top: 0;
-}
-
-.footer_end{
-  display: flex;
-  justify-content: space-between;
-  margin: 0px 15px;
-}
-.footer_end p{
-  display: flex;
-  color: var(--thirdColor);
   margin: 0;
+}
 
+
+.footer_end p{
+  text-align: center;
+  margin-bottom: 0;
 }
 
 
@@ -153,6 +159,7 @@ background-color: lightgreen;
   color: inherit;
   width: 70px;
   text-align: center;
+  cursor: pointer;
 
 
 }

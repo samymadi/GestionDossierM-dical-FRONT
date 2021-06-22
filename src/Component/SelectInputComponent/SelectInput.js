@@ -22,6 +22,7 @@ function SelectInput({...element}) {
 
     const handleChoose = (e)=>{
         setValue(e.target.innerText);
+        setOpen(false);
     }
     return (
         <div className={container}>
@@ -34,9 +35,7 @@ function SelectInput({...element}) {
                   {optionsList.map((item,key)=>{
                       return <p key={key}>{item}</p>
                   })} 
-                    <p>Ortosklqsklqsklqksqsklqsklqksqlkkslsklq</p>
-                    <p>Généraliste</p>
-                    <p>Généraliste</p>
+                    
                     
                 </div>}
         </div>

@@ -67,6 +67,7 @@
 
 
 .date_time{
+    word-spacing: 4px;
     margin-left: auto;
     width: fit-content;
     font-size: 14px;
@@ -76,6 +77,8 @@
 .labo{
     font-weight: bold;
     color: black;
+    margin-right: 5px;
+    word-spacing: normal;
 }
 
 

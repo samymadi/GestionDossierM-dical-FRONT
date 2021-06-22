@@ -1,0 +1,37 @@
+.modal{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    background-color: rgb(0, 0, 0,0.1);
+}
+
+.container{
+    display: flex;
+    width: 50px;
+    margin: 100px auto;
+}
+
+
+.bulle{
+    opacity: 0.5;
+    transform: translateY(+10px);
+    margin: auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primaryColor);
+    transition: all 400ms ease;
+}
+
+.second_color div {
+    background-color: var(--secondColor);
+}
+
+
+.bulle_anime{
+    opacity: 1; 
+    transform: scale(1.5);   
+}

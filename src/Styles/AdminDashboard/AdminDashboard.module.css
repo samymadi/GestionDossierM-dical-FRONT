@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.left_side{
+    flex: 0.25;
+    border-right: 1px solid lightgray;
+}
+
+.nav_container {
+    position: relative;
+    padding-left: 15px;
+    width: fit-content;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: 15px;
+}
+.nav_container p {
+    font-weight: bold;
+    line-height: 45px;
+    margin: 0;
+    cursor: pointer;
+  
+}
+
+
+
+
+.nav_container p:last-child:hover{
+    transform: none;    
+}
+
+.selected_bar{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 4px;
+    height: 35px;
+    background-color: var(--secondColor);
+    border-radius: 15px;
+    transition: transform 220ms ease-in;
+}
+
+.select_user{
+  transform: translateY(0px);
+}
+.select_demande{
+    transform: translateY(+45px);
+}
+
+.nav_container p:last-child {
+    color: red; 
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+
+.right_side{
+    flex: 0.75;
+    padding: 15px;
+    overflow-y: scroll;
+
+}
+
+
+
+
+
+
+

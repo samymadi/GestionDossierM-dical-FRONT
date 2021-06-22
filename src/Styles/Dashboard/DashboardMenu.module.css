@@ -14,4 +14,74 @@
     border-radius: 7px;
     background-color: white;
     box-shadow: 0px 3px 6px lightgray;
+    padding: 7px 25px;
+
 }
+
+
+.container_global_info{
+    display: flex;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0px 3px 6px lightgray;
+    padding: 5px 30px;
+    height: 35%;
+}
+
+.container_global_info div:last-child{
+    margin-left: 25px;
+    color: var(--primaryColor);
+}
+
+.container_global_info p {
+        font-weight: bold;
+        line-height: 45px;
+}
+
+
+
+/* --------------------------------Actualité--------------------------------------- */
+
+.list_container::-webkit-scrollbar-thumb{
+    background-color: var(--primaryColor);
+}
+
+.list_container{
+    overflow-y: scroll;
+    height: 450px;
+}
+
+.actualite_container h4{
+    margin-left: 25px;
+}
+
+
+
+/* -------------------------------bulle_container--------------------------------------- */
+
+
+.bulle_container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: 20px;
+    border-bottom: 0.5px solid lightgray;
+}
+
+
+.bulle_content{
+    color: var(--thirdColor);
+    width: 90%;
+}
+
+.bulle_date{
+    font-size: 13px;
+    width: fit-content;
+    margin-left: auto;
+    margin-bottom: 5px;
+}
+
+.author{
+    font-weight: bold;
+    
+}
+

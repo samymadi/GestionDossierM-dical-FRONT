@@ -1,0 +1,45 @@
+
+.demande_list_container{
+    width: 80%;
+    
+}
+
+.list_header{
+    display: flex; 
+    background-color: var(--secondColorLowOpacity2);
+    border-radius: 4px;
+    box-shadow: 0px 1px 4px lightgray;
+    
+}
+
+.demande_user{
+    overflow-y:scroll ;
+    height: 300px;
+}
+.list_header > p{
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.container_bulle{
+    display: flex;
+    border-radius: 4px;
+    transition: background-color 250ms ;
+    cursor: pointer;
+}
+
+.container_bulle:hover{
+    background-color: rgb(231, 231, 231);
+}
+.container_bulle > p {
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+.container_bulle p:first-child{
+    margin-left: 4px;
+}

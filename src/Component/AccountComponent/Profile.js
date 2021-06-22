@@ -1,6 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Styles from '../../Styles/Account/MainSettings.module.css';
 import Pic from '../../Assests/Login-img.jpg'
+
+
 
 
 
@@ -8,42 +10,53 @@ import Pic from '../../Assests/Login-img.jpg'
 import ButtonStyle from '../ButtonComponent/ButtonsStyle'
 import Modal  from "../Modals/UpdateUserModal";
 
+function Profile({user}) {
 
-function Profile() {
-
+    const  {nom,prenom,lieuNaissance,adresse,telephone,sexe}= user;
+    const  [dateNaissance,setDateNaissance]=useState();
     // -----------------------------------State Variables----------------------------------
     // ------------------------------------------------------------------------------------
     const [openModal,setOpenModal] =useState(false);
+   
 
+    useEffect(()=>{
+        if(user.dateNaissance)
+       { const date=  new Date(user.dateNaissance).toJSON().substring(0,10);
+        setDateNaissance(date);
+       }
+        
+    },[])
+      
 
+    
    
 
     return (
         <div id="Profile"  className={Styles.profile}>
-            {/* <p className={Styles.title}>Profile</p> */}
-
+            <p className={Styles.title}>Informations Personnelles</p>
+            <p className={Styles.sub_title}></p>
           <div className={Styles.container_profile}>  
                 <div className={Styles.update_photo}>
                     <p>Changer la photo de profile</p>
                 
                     <img src={Pic} />
                 </div>
-          <p className={Styles.sub_title}>Informations Personnelles :</p>
+          
                 
                 <div className={Styles.informations_data}>
                     <div>
-                        <p>Nom<span> Madi</span></p>
-                        <p>Prenom<span> Samy</span></p>
-                        <p>Date de naissance<span> 12/07/1999</span></p>
+                        <p>Nom<span>{nom && nom}</span></p>
+                        <p>Prenom<span>{prenom && prenom}</span></p>
+                        <p>Date de naissance<span>{dateNaissance && dateNaissance}</span></p>
                     </div>  
-                    <p>Lieu de naissance <span>El-Ebiar</span></p>
-                    <p>Sexe<span>Homme</span></p>
-                    <p>Téléphone<span>0555300442</span></p>
-                    <p>Adresse<span>Cite la concorde BT G N 10 birmourad rais alger </span></p>
+                        <p>Lieu de naissance <span>{lieuNaissance && dateNaissance}</span></p>
+                        <p>Sexe<span>{sexe === true? "Homme" : "Femme" }</span></p>
+                        <p>Téléphone<span>{telephone !='null' && telephone}</span></p>
+                        <p>Adresse<span>{adresse !='null'  && adresse}</span></p>
                 </div>
                 <ButtonStyle className={Styles.button} type='primary' eventclick={()=>{setOpenModal(true)}}>Modifier</ButtonStyle>
          </div>
-          { openModal  &&  <Modal setOpenModal={setOpenModal} ></Modal>}
+          { openModal  &&  <Modal user={user} setOpenModal={setOpenModal} ></Modal>}
         </div>
     )
 }

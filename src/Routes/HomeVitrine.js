@@ -51,12 +51,12 @@ function HomeVitrine() {
 
     return (
         <div className={Styles.home_vitrine}>
-            <header ref={background} className={Styles.header}>
+            <header id="home"  ref={background} className={Styles.header}>
                     <div ref={navBar}  className={Styles.navigation_container}>
                         <nav  className={Styles.navigation_bar_Upstate}>
-                            <Link class={titleStyle === 1 ? Styles.selected_title : ""}  onClick={handleClickHome}  >Home</Link>
-                            <Link class={titleStyle === 2 ? Styles.selected_title : ""}  onClick={handleClickDetails}  >Détails</Link>
-                            <Link class={titleStyle === 3 ? Styles.selected_title : ""}   onClick={handleClickContact} >Contact</Link>
+                            <a href='#home' class={titleStyle === 1 ? Styles.selected_title : ""}  onClick={handleClickHome}  >Home</a>
+                            <a href='#details' class={titleStyle === 2 ? Styles.selected_title : ""}  onClick={handleClickDetails}  >Détails</a>
+                            <a href='#contact' class={titleStyle === 3 ? Styles.selected_title : ""}   onClick={handleClickContact} >Contact</a>
                             <div className={Styles.selected_bar + " "+ (titleStyle == 1 ? Styles.selected_barpos1  : (titleStyle == 2 ? Styles.selected_barpos2: Styles.selected_barpos3))}></div>
                         </nav>
                     </div>
@@ -64,21 +64,18 @@ function HomeVitrine() {
             </header>
             <main className={Styles.main}>
                     <VitrineContent className={Styles.test}></VitrineContent>
-                    <footer className={Styles.footer}>
+                    <footer id="contact" className={Styles.footer}>
                         <div className={Styles.container_contact}>
                             <div className={Styles.container_icons_reseaux_sociaux}>
                               <a href="https://www.facebook.com" target="_blank"><img src={FacebookIcon}/></a>
                               <a href="https://www.instagram.com" target="_blank"> <img src={InstagramIcon}  /></a>
                               <a href="https://twitter.com" target="blank">  <img src={TwitterIcon}  /></a>
                             </div>
-                            <p>Suivez Nous sur nos réseaux Sociaux </p>
+                            <p>@CopyRight 2021: Droits Réservés</p>
                         </div>
 
-                        <div className={Styles.footer_end}>
-                            <p>PFE 2021 Madi Samy</p>
-                            <p>@CopyRight 2021: Droits Réservés</p>
-                            <p>EN <span>FR</span></p>
-                        </div>
+                    
+                        
                     </footer>
             </main>
             

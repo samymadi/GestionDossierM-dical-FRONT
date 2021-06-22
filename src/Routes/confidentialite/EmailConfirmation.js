@@ -1,8 +1,11 @@
+import {useState} from 'react';
+
 import Styles from '../../Styles/Confidentialite/EmailConfirmation.module.css'
 import Email_Notification from '../../Assests/Svg/email-notification.svg'
 
 function EmailConfirmation() {
-    return (
+    return  (
+        
         <div className={Styles.email_confirmation}>
               <div className={Styles.container}>
                     <img src={Email_Notification}/>
@@ -12,8 +15,20 @@ function EmailConfirmation() {
                     <button>Verifier</button>
                     <p>Renvoyer le code ?</p>
               </div>
-        </div>
+        </div> 
     )
 }
 
 export default EmailConfirmation;
+
+
+
+
+function SendEmail(){
+    const {send_email_container} =Styles; 
+    return (
+        <div className={send_email_container}>
+            <p>Pour récuperer votre mot de passe saisissez votre email</p>
+        </div>
+    )
+}

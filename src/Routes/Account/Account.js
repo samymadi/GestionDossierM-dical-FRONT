@@ -1,6 +1,11 @@
 import {useState,useEffect} from 'react'
-import { useHistory,Link } from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
+
+import Cookies from 'js-cookie';
+import axios  from 'axios';
+
 import Styles from '../../Styles/Account/Account.module.css'
+import {HttpRequest,SessionCookie} from '../../Models/User';
 
 
 // ------------------Component Imports---------------------------
@@ -17,7 +22,7 @@ import Report from '../../Assests/Icons/Report.png'
 
 function Account() {
 
-    
+    const history = useHistory();    
     // -----------------------State Variables--------------------------------------
     // --------------------------------------------------------------------------
 
@@ -30,6 +35,7 @@ function Account() {
     // --------------------------------------------------------------------------
 
         const handleClickTitle =(e)=>{
+         
             const title = e.target.innerText;
             switch (title) {
                 case "Demande d'identification": setCurrentPage(<ManageIdentifications/>); setSelectedBarPos("0"); setSelectedBarVisible("visible"); break;
@@ -37,6 +43,27 @@ function Account() {
                 case "Deconnexion": break;
                 default: setCurrentPage(<MainSettings/>); setSelectedBarVisible("hidden"); break;
             }
+        }
+
+
+        const handleLogOut = async (e)=>{
+            e.stopPropagation();
+            e.preventDefault();
+            const request = new HttpRequest("session",Cookies.getJSON("SessionAuth"));
+            await  axios.post("http://localhost:8000/authentification/Disconnect",request)
+                    .then(result=>{
+                        if(result.status === 200)
+                            {
+                            Cookies.remove("SessionAuth");
+                            history.go("/Authentication/true");  
+                            Cookies.set("Login",false);
+                                }
+                    })
+                    .catch(err=>console.log(err));
+            
+            
+            
+            
         }
 
    
@@ -71,15 +98,14 @@ function Account() {
                         <div className={Styles.container_element2}>
                             <p onClick={handleClickTitle}>Demande d'identification</p>
                             <p onClick={handleClickTitle}>Privilèges d'accès </p>
-                            <p onClick={handleClickTitle}>Deconnexion  </p>
+                            <p onClick={handleClickTitle} onClick={handleLogOut}>Deconnexion</p>
                             <div style={{transform:`translateY(${selectedBarPos})`,visibility: selectedBarVisible }} className={Styles.selected_bar}/>
                         </div>
                     </div>
                 </aside>
                 <main>
                     <div className={Styles.main_container}>
-                            {currentPage}
-                            
+                            {currentPage}  
                     </div>
                 </main>
         </div>

@@ -10,8 +10,15 @@ import FileGestion  from '../../Assests/Svg/FileGestion.svg'
 import Rappls_Notifications  from '../../Assests/Svg/Rappls_Notifications.svg'
 import Protection  from '../../Assests/Icons/CoronaIcons/Protection.png'
 
+
+import Scene1 from '../../Assests/Svg/Scene1.svg'
+
 //
 import {useHistory} from 'react-router-dom'
+import Cookies from 'js-cookie'
+
+
+const {block2,covid_info,back_img,input_container} = Styles;
 
 function VitrineContent() {
 
@@ -25,16 +32,18 @@ function VitrineContent() {
     const handleClicklogin =()=>{
         history.push("/Authentication/false")
     }
+
     return (
-        <div className={Styles.vitrine_content}>
+        <div  className={Styles.vitrine_content}>
 
             <article className={Styles.home_article}>
                     <div className={Styles.container_info}>
                             <p>EMedical la première platforme digitalisé <br /> de Gestion du dossier Médical en Ligne</p>
-                            <div className={Styles.container_button}>
+                            { Cookies.get("Login") !== "true" ?  <div className={Styles.container_button}>
                                 <button className={`${Styles.button} ${Styles.btn_signin}`} onClick={handleClickSignin}>Connexion</button>
                                 <button className={`${Styles.button} ${Styles.btn_login}`} onClick={handleClicklogin}>Inscription</button>
-                            </div>  
+                            </div>  : <button className={`${Styles.button} ${Styles.btn_signin}`} onClick={handleClicklogin}>Acceder au Dashboard</button>
+                                 }
                     </div>
 
                     <div className={Styles.container_image}>
@@ -54,7 +63,7 @@ function VitrineContent() {
             </article>
 
 
-            <article className={Styles.presentation}>
+            <article id="details" className={Styles.presentation}>
                     <p>Ce que EMedical vous propose </p>
                     <div className={Styles.presentaions_main}>
                             <div className={Styles.container}>
@@ -73,17 +82,61 @@ function VitrineContent() {
                                 
                                 <img src={FileGestion}/>
                                 <p><span>3. </span>Gestion du dossier</p>
-                                <p>Modifier Supprimer des analyse avec EMedicale oubliez la papras</p>
+                                <p>Retrouver tous les documents médicaux d'un client dans un seul endroit</p>
                             </div>
                     </div>
             </article>
 
 
-            <article>
-                    
+            <article className={block2}>
+            <InformationsCadre title='MESSAGERIE'>
+                Avec la messagerie EMedicale c'est facile elle vous permet de communiquer avec vous medecins en une touche
+              <ol>
+                  <li>Lancer des conversation</li>
+                  <li>Recherche de Contacts Simplement</li>
+                  <li>Bloquer des utilisateurs malveillant</li>
+              </ol>   
+            </InformationsCadre>   
+            <InformationsCadre title='AUTO RAPPEL' >Programmer des rappels pour vous prevenir de l'approche d'un évenement ex: Rendez-vous chez un medecin,les analyses sonts prets pour les retirer
+            un email vous sera envoyé a l'approche du reppel vous a tout momemnt supprimer modifer le rappel 
+            </InformationsCadre>   
+            <InformationsCadre title='CONFIANCE' >Avec l'indetification chque utilisaeur peut confirmer son indetification. Toujours crédible tous les Medecins Laboratoire sont vérifiés par notre
+            site.    
+              </InformationsCadre>   
+            <InformationsCadre title='DOSSIER MEDICAL' >
+            
+            </InformationsCadre> 
+
+  
+                  <div className={input_container} >
+                    <p>Abonnez vous a notre boite Email pour recevoir les nouvelles actualité du Covid-19 et de la santé Mondiale</p>
+                   <div>
+                        <input type="text" placeholder='email@gmail.com' />
+                        <button>S'abonner</button>
+
+                   </div>
+                  </div>
+             
+  
             </article>
+
+           
         </div>
     )
 }
 
 export default VitrineContent
+
+
+
+
+const {cadre_container,cadre_title,cadre_text}=Styles;
+
+function InformationsCadre({children,title}){
+    return (
+        <div className={cadre_container}>
+                    <p className={cadre_title}>{title}</p>
+                    <p className={cadre_text}>{children}</p>
+        </div>
+    )
+}

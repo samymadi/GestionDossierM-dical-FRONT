@@ -2,10 +2,11 @@ import React,{useState,useEffect} from 'react'
 import {Route,useHistory} from "react-router-dom"
 import {Link} from 'react-router-dom'
 import Styles from '../../Styles/Dashboard/Dashboard.module.css';
-
+import Cookies  from 'js-cookie';
 
 // --------------------------------Component Imports----------------------------
 import NotifPopUp from '../../Component/DashBoard/NotifPopUp';
+import Messagerie from '../Messagerie';
 
 // ------------------------------Icons Imports------------------------------------
 import Notification from '../../Assests/Icons/Notifications.png';
@@ -34,8 +35,10 @@ function Dashboard() {
             setSelectedBar({transform:"translateX(119px)",width:"121px"})
                 else if(location =="/dashboard/message")
                     setSelectedBar({transform:"translateX(269px)",width:"75px"});
+                        else if(location =="/dashboard/messagerie") 
+                                setSelectedBar({transform:"translateX(269px)",width:"75px"})
 
-                    console.log("location: ",location)
+                    console.log("location: ",location);
     },[location]);
     
 
@@ -63,10 +66,11 @@ function Dashboard() {
         <div className={dashboard}>
             <nav className={nav_bar}>
                 <div className={title_navigation} onClick={handleTitleClick}>
-                    <Link push to='/dashboard' style={{color : (selectedBar.width ==='90px' && "black")}}>Dashboard</Link>
-                    <Link push to='/dashboard/DossierMedical' style={{color : (selectedBar.width ==='121px' && "black")}}>Dossier Médical</Link>
-                    <Link push to='/Messagerie' style={{color : (selectedBar.width ==='75px' && "black")}}>Message</Link>
-                    <Link push to="/account">Compte</Link>
+                    <Link  to='/dashboard' style={{color : (selectedBar.width ==='90px' && "black")}}>Dashboard</Link>
+                    <Link  to='/dashboard/DossierMedical' style={{color : (selectedBar.width ==='121px' && "black")}}>Dossier Médical</Link>
+                    <Link  to='/dashboard/Messagerie' style={{color : (selectedBar.width ==='75px' && "black")}}>Message</Link>
+                    <Link  to="/Home">Home</Link>
+                    <Link  to="/account">Compte</Link>
                     <div className={selected_bar} style={selectedBar} ></div>
                 </div>
                 <div className={icons_buttons}>
@@ -78,7 +82,8 @@ function Dashboard() {
 
             <div className={content_container}>         
                    <Route exact path="/dashboard"><DashBoardMenu/></Route>
-                   <Route path="/dashboard/DossierMedical"><DossierMed/></Route>         
+                   <Route path="/dashboard/DossierMedical" render={()=>(<DossierMed/>)}></Route>  
+                   <Route path="/dashboard/Messagerie" ><Messagerie></Messagerie></Route>       
             </div>
 
           

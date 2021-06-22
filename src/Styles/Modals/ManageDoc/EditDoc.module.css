@@ -21,10 +21,18 @@
 }
 .documents {
     display: flex;
+    height: 110px;
     width: 90%;
     margin: 0 auto;
     overflow-x: scroll;
     /* justify-content: center; */
+}
+
+.documents > p {
+  
+    margin: auto auto ;
+    font-size: 20px;
+    color: var(--thirdColor);
 }
 
 
@@ -83,6 +91,14 @@
     font-size:16px;
 }
 
+.error_message{
+    margin: 0;
+    margin-left: 15px;
+    line-height: 40px;
+    font-size: 14px;
+    color: rgb(250, 121, 16);
+}
+
 .buttons_container{
     margin: 20px auto 0px auto;
     width: fit-content;
@@ -122,8 +138,8 @@
 }
 
 .file_container p {
-    margin-top: 15px;
-   
+    width: 150px;
+    margin: 15px auto ;
     text-overflow: ellipsis;
     text-align: center;
     overflow-x: hidden;

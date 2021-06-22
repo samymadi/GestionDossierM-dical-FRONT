@@ -137,14 +137,14 @@
 .visitors_list_container{
     display: flex;
     flex-direction: column;
-    border: 1px solid lightgray;
-    border-radius: 7px;
+    
 }
 
 
 .titles_ligne_container{
     display: flex;
-    border-bottom: 1px solid lightgray;
+    box-shadow: 0px 1px 4px lightgray;
+    border-radius: 4px;
     background-color:var(--secondColorLowOpacity);
     
     

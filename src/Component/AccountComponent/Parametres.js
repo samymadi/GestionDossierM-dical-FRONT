@@ -1,4 +1,4 @@
-import React from 'react'
+import {useEffect, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import Styles from '../../Styles/Account/MainSettings.module.css';
 import {Switch} from '@material-ui/core'
@@ -9,14 +9,27 @@ import ManageVisitors from "./ManageVisitors";
 import ButtonStyle from '../ButtonComponent/ButtonsStyle'
 
 
+// ----------------Bib import------------------------
+import axios from 'axios';
 // ----------------Picture Imports------------------------
 import Email from '../../Assests/Icons/Email.png'
 import Notifications from '../../Assests/Icons/Notifications.png'
 import Message from '../../Assests/Icons/Message.png'
 
+
 function Parametres() {
 
     const history = useHistory();
+    const [message,setMessage] = useState();
+    const [email,setEmail] = useState();
+    const [notifcation,setNotification] = useState();
+
+
+
+
+    useEffect(()=>{
+        axios.post('');
+    },[])
 
 
 
@@ -53,7 +66,7 @@ function Parametres() {
                                 <img src={Notifications}/>
                                 <p>Notifications</p>
                             </div> 
-                            <Switch className={Styles.switch} size="small" defaultChecked></Switch>
+                            <Switch className={Styles.switch} value size="small" defaultChecked></Switch>
                         </div>
 
                 </div>

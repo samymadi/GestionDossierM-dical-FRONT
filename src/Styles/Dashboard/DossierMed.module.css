@@ -5,7 +5,7 @@
 }
 
 .left_side{
-    flex: 2;
+    flex: 2.5;
     padding: 10px 5px;
     background-color: white;
     border-radius: 7px;
@@ -14,11 +14,13 @@
 }
 
 .right_side{
-    flex: 8;
+    flex: 7.5;
     background-color: white;
     border-radius: 7px;
     box-shadow: 0 3px 6px lightgray;
     margin-left: 5px;
+    
+
 }
 
 
@@ -104,5 +106,102 @@
     cursor: pointer;
     transition: transform 250ms ease-in;
     
+}
+
+
+
+
+/* ------------------------------------------Patient Component--------------------------------------------------*/
+
+.patient_list_container{
+    margin-top: 20px;
+}
+
+.patient_list_container h3{
+    text-align: start;
+}
+
+.header_list {
+    display: flex;
+    background-color: var(--primaryColorLowOpacity);
+    border-radius: 3px;
+    box-shadow: 0 1px 4px lightgray;
+    margin-bottom: 5px;
+}
+
+.header_list p {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.patient_list{
+    overflow-y: scroll;
+    height: 150px;
+    border-radius: 4px;
+
+}
+
+.patient_list::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+/* -------------------------------------BullePatient Component ------------------------------------- */
+
+.container_bulle {
+    cursor: pointer;
+    display: flex;
+    border-radius: 2px;
+    transition: background-color 150ms ease-in,transform 90ms ease-out;
+    border-bottom: 1px solid lightgray;
+}
+
+.container_bulle:hover{
+    background-color: rgb(236, 236, 236);
+    transform: scale(1.03);
+}
+
+.container_bulle p {
+    flex: 1;
+    text-align: center;
+}
+
+
+
+.patient_details {
+    /* background-color: lightcoral; */
+    height: 210px;
+    padding: 15px 5px;
+}
+
+
+.patient_details div{
+    display: flex;
+    
+}
+
+.patient_details p {
+    font-weight: bold;
+    flex: 1;
+}
+
+.patient_details span {
+    font-weight: normal;
+}
+
+.patient_control button{
+    background-color: var(--primaryColor);
+    opacity: 0.9;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    width: 150px;
+    height: 34px;
+    font-size: 17px;
+    cursor: pointer;
+    color: white;
+    margin: 25px auto;
 }
 

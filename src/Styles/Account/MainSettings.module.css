@@ -87,9 +87,18 @@
     margin-left: 50px;
 }
 
-.informations_data div {
+.informations_data > div {
     display: flex;
+    flex-wrap: wrap;
     
+}
+
+.informations_data > div p {
+    flex:1;
+}
+
+.informations_data >div p:last-child{
+    flex: 1.4;
 }
 
 .informations_data p {

@@ -1,0 +1,281 @@
+.container{
+    display: flex;
+    height: 100%;
+}
+
+.message_contacts{
+    flex: 0.3;
+    margin-right: 5px;
+    box-shadow: 0px 3px 6px lightgray;
+    background-color: white; 
+    border: 3px solid #c0ffe2;
+    
+}
+
+.message_contacts h2{
+    text-align: center;
+}
+
+.research_bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    width: 90%;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px lightgray;
+    
+}
+.research_bar img {
+    height: 28px;
+    cursor: pointer;
+    transition: transform 250ms ease-in;
+}
+.research_bar img:active{
+    transform: scale(0.8);
+}
+.research_bar input::placeholder{
+    color: var(--thirdColor);
+}
+.research_bar input{
+    outline: none;
+    border: none;
+    width: 80%;
+    font-size: 17px;
+    padding-left: 10px;
+    
+}
+
+.contact_list_container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 450px;
+    background-color: white;
+}
+
+.contact_list_container::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* ------------------------------------------ Right Side---------------------------------------- */
+.messagerie{
+    display: flex;
+    flex-direction: column;
+    flex: 0.7;
+    background-color: #f4faf7;
+}
+
+.messagerie header{
+    position: relative;
+    flex: 0.05;
+}
+
+.messagerie header img {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    height: 27px;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.contact_name_title{
+    margin: 15px auto;
+    width: fit-content;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(49, 49, 49);  
+    user-select: none;  
+}
+
+.messagerie .body{
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    flex: 0.85;
+    overflow-y: scroll;
+    padding-bottom: 25px;
+    
+}
+
+
+.message_vide{
+    position: absolute;
+    top: 50%;
+    align-self: center;    
+    color: var(--thirdColor);
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.body::-webkit-scrollbar{
+    display: none;
+}
+
+.messagerie footer{
+    display: flex;
+    flex: 0.1;
+    width: 100%;
+}
+
+.messagerie footer input,.messagerie footer button{
+    border: none;
+    height: 45px;
+    margin: 10px 15px;
+    margin-top: 0;
+    background-color: white;
+    box-shadow: 2px 3px 15px lightgray;
+    border-radius: 7px;
+}
+
+.messagerie footer input:disabled ,.messagerie footer button:disabled{
+    opacity: 0.4;
+    cursor: default;
+}
+
+.messagerie footer input{
+    flex: 9.5;
+    outline: none;
+    padding: 0;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+}
+
+.messagerie footer button{
+    flex: 0.5;
+    margin-left: 0px;
+    padding: 5px;
+    width: 45px;
+    cursor: pointer;
+    background-color: var(--primaryColorLowOpacity);
+    transition: transform 50ms ease-in;
+}
+
+.messagerie footer button:active{
+    transform :scale(0.9);
+}
+
+.messagerie footer  img {
+    display: block;
+    height: 30px;
+    margin: auto;
+}
+
+
+
+
+
+/* ---------------------------------------ContactBulle --------------------------------*/
+
+.contact_bulle{
+   margin: 0px auto;
+   overflow: hidden;
+   padding: 10px 15px;
+   border-bottom: 1px solid lightgray;
+   cursor: pointer; 
+   transition: background-color 150ms ease-in ;
+}
+.contact_bulle:hover{
+    background-color: #E0F8F9;
+}
+
+.contact_bulle p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.contact_name{
+    font-weight: bold;
+    font-size: 17px;
+    align-self:  flex-end;
+}
+
+.contact_message{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 280px;
+    margin-left: 20px;
+    color:var(--thirdColor);
+    
+}
+.contact_message_date{
+        width: fit-content;
+        margin-left: auto;
+        font-size: 14px;
+}
+
+
+
+/* --------------------------------------MessageBulle------------------------------ */
+
+.bulle_container{
+    background-color: #E0F8F9;
+    max-width: 70%;
+    margin: 7px 15px;
+    border-radius: 4px;
+    padding: 5px 9px;
+    align-self: flex-start;
+    box-shadow: 0px 2px 4px lightgray;
+}
+
+
+.user_style{
+    align-self: flex-end;
+    background-color: white;
+}
+
+.text_message{
+    margin: 0;
+}
+
+.message_date{
+    margin: 0;
+    margin-left: auto;
+    margin-top: 5px;
+    width: fit-content;
+    font-size: 12px;
+    color: var(--thirdColor);
+
+}
+
+
+/* ----------------------------------Accepr Container------------------------------------- */
+.accept_container{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.accept_container button{
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 1px 6px lightgray;
+    background-color: var(--primaryColorLowOpacity);
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    width: 100px;
+    transition: transform 150ms ease-in;
+}
+
+.accept_container button:last-child{
+    margin-left: 15px;
+    background-color: var(--secondColor);
+}
+
+.accept_container button:active{
+    transform: scale(0.9);
+}
+
+.accept_container span{
+    font-weight: bold;
+}

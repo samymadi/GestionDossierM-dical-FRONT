@@ -1,0 +1,55 @@
+.container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    width: 25%;
+    margin:auto;
+    left: 0;
+    right: 0;
+    top: 35px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px lightgray;
+    transition: transform 350ms cubic-bezier(1,-0.02, 0.95, 1.4);
+    transform: translateY(-120px);
+    z-index: 5;
+    
+}
+
+
+.warning{
+    background-color: rgb(253, 229, 184);
+}
+
+.error{
+    background-color: rgb(250, 221, 221);
+}
+
+.reveal{
+   transform: translateY(0px);
+   
+}
+
+.disapear{
+    transition: transform 150ms cubic-bezier(1,-0.02, 0.95, 1.4);
+    transform: translateY(-120px);
+}
+
+.state_icon{
+    height: 40px;
+    margin-left: 15px;
+}
+
+.delete_icon{
+     position: absolute;
+     right: 5px;
+     top: 5px;
+     cursor: pointer;
+     height: 20px;
+}
+.message{
+  
+   margin-left: 15px;
+  
+}

@@ -40,7 +40,7 @@ function Authentication() {
                             </div>
                         </header>
                         <main className={Styles.form_container}>
-                            {LoginOrSignin ? <SignIn></SignIn> : <Login></Login> }
+                            {LoginOrSignin ? <SignIn setLoginOrSignin={setLoginOrSignin}></SignIn> : <Login setLoginOrSignin={setLoginOrSignin}></Login> }
                         </main>
                         <footer className={Styles.footer_container}>
                             <p>@CopyRight 2021: Droits Réservés</p>

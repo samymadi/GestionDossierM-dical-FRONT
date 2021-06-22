@@ -1,8 +1,15 @@
+.container{
+    position: relative;
+    height: 100%;
+}
+
 .header{
     position: relative;
-    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
     height: 45px;
+    
 }
+
 
 
 .back_container{
@@ -14,6 +21,16 @@
     margin-left: 7px;
     cursor: pointer;
 }
+
+
+.title{
+    position: absolute;
+    top: -11px;
+    right: 47%;
+    font-size: 23px;
+}
+
+
 
 .back_container:hover img   {
     transform: translateX(-2px);
@@ -29,6 +46,17 @@
 .back_container img {
  
     transition: transform 250ms ease-in;
+}
+
+
+.back_container_disabled {
+    color: var(--thirdColor);
+}
+.back_container_disabled img{
+    opacity: 0.2;
+}
+.back_container_disabled:hover img{
+    transform: none;
 }
 
 
@@ -80,13 +108,30 @@
 
 
 .body_container{
+    position: absolute;
+    bottom: 0;
+    top: 45px;
+    right: 0;
+    left: 0;
+    height: fit-content;
+    max-height: 85%;
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    flex-grow: 5;
     padding: 10px 5px;
+    overflow-y: scroll;
 }
 
 
-
+.no_file{
+    width: fit-content;
+    height: fit-content;
+    margin: 100px auto;
+    color: var(--thirdColor);
+    font-size: 28px;
+    
+}
 
 
 /* -----------------------------------Folder Component----------------------  */
