@@ -22,7 +22,7 @@ import axios from 'axios';
 function DossierMed({...rest}) {
     const {container,left_side,right_side,button_container,input_container,buttons,container_extend,animate} = Styles;
     const  privileges = useContext(AuthContext);
-
+    
    
     
     
@@ -137,10 +137,12 @@ function PatientComponent({setCurrentPatient,currentPatient}){
         .catch(err=>{console.log(err)})
     },[]);
 
-
+    
+   
 
     const handleContact = ()=>{
-        history.push("/Dashboard/Messagerie")
+
+        history.push("/Dashboard/Messagerie/"+currentPatient.Id_Patient);
     }
 
     return (
@@ -170,7 +172,7 @@ function PatientComponent({setCurrentPatient,currentPatient}){
                     </div>                   
 
                     <div className={patient_control}>
-                        <button onClick={handleContact} >Contactez</button>
+                        <button onClick={handleContact}>Contactez</button>
                     </div>
             </div>}
         </div>

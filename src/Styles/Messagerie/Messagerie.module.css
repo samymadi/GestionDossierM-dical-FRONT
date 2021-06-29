@@ -8,7 +8,7 @@
     margin-right: 5px;
     box-shadow: 0px 3px 6px lightgray;
     background-color: white; 
-    border: 3px solid #c0ffe2;
+    
     
 }
 
@@ -53,7 +53,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow: scroll;
     height: 450px;
     background-color: white;
 }
@@ -74,6 +74,27 @@
 .messagerie header{
     position: relative;
     flex: 0.05;
+}
+
+.block_bulle{
+    position: absolute;
+    background-color: white;
+    width: fit-content;
+    right: 60px;
+    top: 7px;
+    border-radius:5px ;
+    box-shadow: 0px 3px 6px lightgray;
+    transition: background-color 150ms ease-in;
+}
+
+.block_bulle p {
+    margin: 0;
+    padding: 15px 35px;
+    cursor: pointer;
+}
+
+.block_bulle:hover{
+    background-color: var(--secondColor);
 }
 
 .messagerie header img {
@@ -179,8 +200,10 @@
    margin: 0px auto;
    overflow: hidden;
    padding: 10px 15px;
+   min-height: 75px;
    border-bottom: 1px solid lightgray;
    cursor: pointer; 
+   width: 90%;
    transition: background-color 150ms ease-in ;
 }
 .contact_bulle:hover{

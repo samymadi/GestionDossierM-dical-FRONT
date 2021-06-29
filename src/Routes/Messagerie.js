@@ -11,19 +11,24 @@ import Send from '../Assests/Icons/Send.png';
 import { HttpRequest,Message } from '../Models/User';
 import Cookies from 'js-cookie';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 
 function Messagerie() {
 
-    const {container,message_contacts,messagerie,research_bar,contact_list_container,body,contact_name_title,message_vide} = Styles;
+    const {container,message_contacts,messagerie,research_bar,contact_list_container,body,contact_name_title,message_vide,block_bulle} = Styles;
+    const {id} = useParams();
+
 
     const [contactID,setContactID] =useState("");
     const [discussionArray,setDiscussionArray] = useState([]); 
     const [currentUser,setCurrentUser] = useState()
+    console.log("current User",currentUser);
     const [currentMessageArray,setCurrentMessageArray] = useState([]);
     const [currentDiscussion,setCurrentDiscussion] = useState();
     const [messagAlert,setMessageAlert] = useState("");
     const [alert,setAlert] = useState(false);
+    const [bulleBlock,setBulleBlock] = useState(false);
     const [messageContent,SetMessageContent] = useState("");
     const [currentSocket,setCurrrentSocket] = useState();
 
@@ -37,7 +42,8 @@ function Messagerie() {
             if(result.status != 200) openAlert("impossible de contactez "+currentUser.nom);
                 else {
                     result.data.data.nom=currentUser.nom;
-                    setDiscussionArray([result.data.data]);
+                    setDiscussionArray(prev=>[result.data.data,...prev]);
+                    setCurrentDiscussion(result.data.data);
                     SetMessageContent("");
                     const {userID,messageContent:msC,messageDate} = result.data.data;
                     setCurrentMessageArray([new Message("",userID,msC,userID,messageDate)])
@@ -117,7 +123,7 @@ function Messagerie() {
             setCurrrentSocket(socket);
 
             socket.on("response",(data)=>{
-                openAlert(data.status);
+              data.status !=200 &&  openAlert(data.status);
             })
 
             socket.on("onMessage",(data)=>{
@@ -136,6 +142,7 @@ function Messagerie() {
     useEffect(()=>{
             getDiscussions();
             connectToSocket();
+            
 
     },[])
 
@@ -144,6 +151,10 @@ function Messagerie() {
         getMessagesApi();
 
     },[currentDiscussion])
+
+    useEffect(()=>{
+        id && getIdDiscussionByUserID();
+    },[discussionArray.length])
 
 
 
@@ -155,25 +166,60 @@ function Messagerie() {
 
 
     const handleAddDisc = async ()=>{
-        if(contactID.trim() == "") return;
-        setContactID(prev=>prev.trim())
-        console.log("contact id",contactID);
-        const request = new HttpRequest({id_destinataire:contactID.trim()},Cookies.getJSON("SessionAuth"));
-        await axios.post("http://localhost:8000/Messagerie/UserExist",request)
+            AddDiscussion(contactID);
+    }
+
+
+
+  async function AddDiscussion(idDisc){
+    console.log("catactid",idDisc);
+    if(idDisc.trim() == "") return;
+    console.log("contact id",idDisc);
+    const request = new HttpRequest({id_destinataire:idDisc.trim()},Cookies.getJSON("SessionAuth"));
+    await axios.post("http://localhost:8000/Messagerie/UserExist",request)
+    .then(result=>{
+        if(result.status == 200){
+                    setCurrentUser(result.data.data);
+                    setCurrentDiscussion();
+                    setCurrentMessageArray([]);
+                    setContactID("");
+        }
+            else {
+                    openAlert("Utilisateur non Existant")
+
+                 }
+    })
+    .catch(err=>{
+        openAlert("Erreur Server")
+    });
+  } 
+
+
+
+    async function getIdDiscussionByUserID(){
+        console.log("getIdDiscussionByUserID")
+        const cookie = Cookies.getJSON("SessionAuth");
+        const request = new HttpRequest({id_destinataire:id},cookie);
+        await axios.post("http://localhost:8000/Messagerie/getDiscByUserId",request)
         .then(result=>{
             if(result.status == 200){
-                        setCurrentUser(result.data.data);
-                        setCurrentMessageArray([]);
-                        setContactID('');
+                if(result.data.data.length == 0) { AddDiscussion(id)}
+                    else 
+                            {
+                                
+                                const disc = discussionArray.find((element)=>element.discussionId == result.data.data[0].Id_Discussion)
+                                console.log("find",result.data.data[0].Id_Discussion,disc,discussionArray);
+                                disc && setCurrentDiscussion(disc);
+                            }
+                
             }
                 else {
-                        openAlert("Utilisateur non Existant")
-
+                    console.log(result); 
                 }
         })
         .catch(err=>{
-            openAlert("Erreur Server")
-        });
+            console.log(err);
+        })
     }
 
     const handleGetMessage = (disc) =>{
@@ -186,6 +232,25 @@ function Messagerie() {
 
     const handleSendMessage = ()=>{
         sendMessageApi();
+    }
+
+    const handleOpenBulle = ()=>{
+            setBulleBlock(prev=>!prev);
+    }
+
+    const handleBlock = async ()=>{
+        const block = currentDiscussion.block ? 0 : 1;
+        const cookie = Cookies.getJSON("SessionAuth");
+        const request = new HttpRequest({Id_discussion:currentDiscussion.discussionId,block:block},cookie);
+        await axios.post("http://localhost:8000/Messagerie/manageBlock",request)
+        .then(result=>{
+            if(result.status == 200) {setCurrentDiscussion(prev=>{ prev.block = block; return {...prev};
+            });
+        setBulleBlock(false);
+        }
+                else {openAlert("Erreur")}
+        })
+        .catch(err=>openAlert("Erreur"))
     }
 
 
@@ -214,12 +279,16 @@ function Messagerie() {
                 <div className={messagerie}>
                         <header>
                             <p className={contact_name_title}>{currentUser ? currentUser.nom : ""}</p>
-                            <img src={More} />
+                            <img src={More} onClick={handleOpenBulle} />
+                            { (currentDiscussion && bulleBlock) && <div  className={block_bulle} >
+                                               <p onClick={handleBlock} >{currentDiscussion.block ? "débloquer" :"bloquer"}</p>
+                                             </div>
+                            }
                         </header>
                         <div className={body}> 
 
                             {
-                               ( currentDiscussion && currentDiscussion.createur && currentDiscussion.block) && <p className={message_vide}>{currentDiscussion.nom} vous a bloqué</p> 
+                               ( currentDiscussion  && currentDiscussion.block) ? <p className={message_vide}>bloqué</p> :""
                             }            
                             {
                                ( currentDiscussion && !currentDiscussion.block && !currentDiscussion.createur && !currentDiscussion.accept) && <AcceptDiscussion disc={currentDiscussion} setDisc={setCurrentDiscussion} openAlert={openAlert} ></AcceptDiscussion>
@@ -234,8 +303,8 @@ function Messagerie() {
                             
                         </div>
                         <footer>
-                            <input type="text" placeholder="Text..." maxLength="600" disabled={ (currentDiscussion && (currentDiscussion.block && !currentDiscussion.accept ))  && "true"} onChange={handleChangeMessage} value={messageContent} />
-                            <button onClick={handleSendMessage}  disabled={(currentDiscussion && (currentDiscussion.block && !currentDiscussion.accept ))  && "true"} ><img src={Send} /></button>
+                            <input type="text" placeholder="Text..." maxLength="600" disabled={ (currentDiscussion && (currentDiscussion.block ))  && "true"} onChange={handleChangeMessage} value={messageContent} />
+                            <button onClick={handleSendMessage}  disabled={(currentDiscussion && (currentDiscussion.block  ))  && "true"} ><img src={Send} /></button>
                         </footer>
 
                        
@@ -278,7 +347,7 @@ const {accept_container} =Styles
 
 function AcceptDiscussion({disc,openAlert,setDisc}){
 
-    const handleClick  = async()=>{
+    const handleAccept = async()=>{
         const request = new HttpRequest({Id_discussion:disc.discussionId},Cookies.getJSON("SessionAuth"))
         await axios.post("http://localhost:8000/Messagerie/acceptDiscussion",request)
         .then(result=>{
@@ -294,12 +363,25 @@ function AcceptDiscussion({disc,openAlert,setDisc}){
                 openAlert("Erreur Server");
         })
     } 
+
+
+    const handleBlock =async()=>{
+            const cookie = Cookies.getJSON("SessionAuth");
+            const request = new HttpRequest({Id_discussion:disc.discussionId,block:1},cookie);
+            await axios.post("http://localhost:8000/Messagerie/manageBlock",request)
+            .then(result=>{
+                if(result.status == 200) setDisc(prev=>{ prev.block = 1; return {...prev};
+                })
+                    else {openAlert("Erreur")}
+            })
+            .catch(err=>openAlert("Erreur"))
+    }
         return  (
             <div className={accept_container}>
                     <p>Un nouveau Contact veut communiquer avec vous  Accepter <span>{disc.nom}</span></p>
                 <div>
-                <button onClick={handleClick}>Accepter</button>    
-                <button onClick={handleClick}>Bloquer</button>    
+                <button onClick={handleAccept}>Accepter</button>    
+                <button onClick={handleBlock}>Bloquer</button>    
                 </div>   
             </div>   
         ) 

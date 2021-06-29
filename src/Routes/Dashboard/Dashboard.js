@@ -29,13 +29,13 @@ function Dashboard() {
 
     // ----------------------------------------Use Effect-----------------------------------
     // ------------------------------------------------------------------------------------------
-
+    
     useEffect(() => {
         if(location == "/dashboard/dossiermedical")
             setSelectedBar({transform:"translateX(119px)",width:"121px"})
                 else if(location =="/dashboard/message")
                     setSelectedBar({transform:"translateX(269px)",width:"75px"});
-                        else if(location =="/dashboard/messagerie") 
+                        else if(location.substring(0,21) =="/dashboard/messagerie") 
                                 setSelectedBar({transform:"translateX(269px)",width:"75px"})
 
                     console.log("location: ",location);
@@ -83,7 +83,7 @@ function Dashboard() {
             <div className={content_container}>         
                    <Route exact path="/dashboard"><DashBoardMenu/></Route>
                    <Route path="/dashboard/DossierMedical" render={()=>(<DossierMed/>)}></Route>  
-                   <Route path="/dashboard/Messagerie" ><Messagerie></Messagerie></Route>       
+                   <Route path="/dashboard/Messagerie/:id?" ><Messagerie></Messagerie></Route>       
             </div>
 
           

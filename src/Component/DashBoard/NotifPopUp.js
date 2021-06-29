@@ -23,6 +23,10 @@ function NotifPopUp() {
                <NotifBox></NotifBox> 
                <NotifBox></NotifBox> 
                <NotifBox></NotifBox> 
+               <NotifBox></NotifBox> 
+               <NotifBox></NotifBox> 
+               <NotifBox></NotifBox> 
+               <NotifBox></NotifBox> 
             </div>
         </div>
     )
